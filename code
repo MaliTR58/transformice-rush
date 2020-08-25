@@ -1,0 +1,557 @@
+----------Code By: Muco#2311 -------
+
+
+for _, v in next, {'AutoTimeLeft', 'AutoShaman', 'AutoNewGame', 'AutoScore', 'AfkDeath', 'PhysicalConsumables'} do
+	tfm.exec['disable' .. v]()
+end
+mapsira=math.random(1,5)
+basadon=0
+
+puans=0
+puank=0
+
+lang={}
+
+function maps()
+
+if mapsira==1 then
+tfm.exec.newGame([[<C><P F="0" L="3000" H="800" /><Z><S><S L="40" H="20" X="1081" Y="577" T="17" P="0,0,0.3,0.2,0,0,0,0" /><S L="40" X="718" H="20" Y="408" T="17" P="0,0,0.3,0.2,20,0,0,0" /><S L="40" H="20" X="900" Y="496" T="17" P="0,0,0.3,0.2,0,0,0,0" /><S L="40" X="965" H="20" Y="343" T="17" P="0,0,0.3,0.2,10,0,0,0" /><S L="40" H="20" X="805" Y="666" T="17" P="0,0,0.3,0.2,-20,0,0,0" /><S L="40" X="667" H="20" Y="539" T="17" P="0,0,0.3,0.2,10,0,0,0" /><S L="200" X="99" H="20" Y="790" T="17" P="0,0,0.3,0.2,0,0,0,0" /><S L="200" H="20" X="2897" Y="785" T="18" P="0,0,0.3,0.2,0,0,0,0" /><S L="40" H="20" X="2677" Y="687" T="18" P="0,0,0.3,0.2,0,0,0,0" /><S L="40" X="2454" H="20" Y="493" T="18" P="0,0,0.3,0.2,-10,0,0,0" /><S L="40" H="20" X="2301" Y="278" T="18" P="0,0,0.3,0.2,-20,0,0,0" /><S L="40" X="2505" H="20" Y="658" T="18" P="0,0,0.3,0.2,10,0,0,0" /><S L="196" X="1429" H="61" Y="628" T="17" P="0,0,0.3,0.2,170,0,0,0" /><S L="40" H="20" X="2176" Y="360" T="18" P="0,0,0.3,0.2,10,0,0,0" /><S L="200" H="61" X="1621" Y="450" T="18" P="0,0,0.3,0.2,-100,0,0,0" /><S L="200" X="1368" H="61" Y="611" T="17" P="0,0,0.3,0.2,-40,0,0,0" /><S L="196" X="1678" H="61" Y="351" T="18" P="0,0,0.3,0.2,-20,0,0,0" /><S L="200" X="1771" H="61" Y="517" T="18" P="0,0,0.3,0.2,130,0,0,0" /><S L="200" H="61" X="1497" Y="601" T="17" P="0,0,0.3,0.2,30,0,0,0" /><S L="40" X="2001" H="20" Y="303" T="18" P="0,0,0.3,0.2,-20,0,0,0" /><S L="196" H="61" X="1782" Y="391" T="18" P="0,0,0.3,0.2,60,0,0,0" /><S L="40" H="20" X="1139" Y="479" T="17" P="0,0,0.3,0.2,-10,0,0,0" /><S L="40" X="1323" H="20" Y="433" T="17" P="0,0,0.3,0.2,10,0,0,0" /><S L="40" X="534" H="20" Y="687" T="17" P="0,0,0.3,0.2,-20,0,0,0" /><S L="40" H="20" X="365" Y="616" T="17" P="0,0,0.3,0.2,-20,0,0,0" /><S L="40" X="258" H="20" Y="742" T="17" P="0,0,0.3,0.2,-20,0,0,0" /><S L="40" X="1250" H="20" Y="282" T="17" P="0,0,0.3,0.2,-10,0,0,0" /><S L="40" X="2124" H="20" Y="528" T="18" P="0,0,0.3,0.2,10,0,0,0" /><S L="40" H="20" X="2311" Y="721" T="18" P="0,0,0.3,0.2,0,0,0,0" /><S L="40" X="2008" H="20" Y="669" T="18" P="0,0,0.3,0.2,0,0,0,0" /><S L="40" H="20" X="2142" Y="761" T="18" P="0,0,0.3,0.2,0,0,0,0" /><S L="40" X="1836" H="20" Y="741" T="18" P="0,0,0.3,0.2,0,0,0,0" /><S L="40" H="20" X="1672" Y="771" T="18" P="0,0,0.3,0.2,-20,0,0,0" /><S L="40" X="1473" H="20" Y="776" T="18" P="0,0,0.3,0.2,30,0,0,0" /><S L="40" H="20" X="1299" Y="785" T="18" P="0,0,0.3,0.2,0,0,0,0" /><S L="40" X="1128" H="20" Y="727" T="18" P="0,0,0.3,0.2,30,0,0,0" /><S L="40" H="20" X="1003" Y="693" T="18" P="0,0,0.3,0.2,20,0,0,0" /><S L="200" H="60" X="1374" Y="98" T="6" P="0,0,0.3,0.2,-140,0,0,0" /><S L="200" X="1421" H="60" Y="202" T="6" P="0,0,0.3,0.2,-110,0,0,0" /><S L="200" H="60" X="1538" Y="197" T="6" P="0,0,0.3,0.2,-220,0,0,0" /><S L="200" X="1680" H="60" Y="171" T="6" P="0,0,0.3,0.2,-160,0,0,0" /><S L="200" H="60" X="1819" Y="118" T="6" P="0,0,0.3,0.2,-220,0,0,0" /><S L="10" o="FFFFFFFFFFFF" H="844" X="-6" Y="380" T="12" P="0,0,0.3,0.2,0,0,0,0" /><S L="10" o="FFFFFFFFFFFF" H="3000" X="1480" Y="8" T="12" P="0,0,0.3,0.2,90,0,0,0" /><S L="10" o="FFFFFFFFFFFF" H="3000" X="3009" Y="672" T="12" P="0,0,0.3,0.2,180,0,0,0" /><S L="10" o="324650" H="75" X="1447" Y="-132" T="12" P="0,0,0.3,0.2,40,0,0,0" /><S L="10" o="324650" H="75" X="1509" Y="-129" T="12" P="0,0,0.3,0.2,150,0,0,0" /><S L="10" o="324650" X="1473" H="75" Y="-84" T="12" P="0,0,0.3,0.2,90,0,0,0" /><S H="300" L="300" o="6a7495" X="1481" c="4" N="" Y="-155" T="12" P="0,0,0.3,0.2,0,0,0,0" /></S><D><DS Y="-110" X="1476" /></D><O /></Z></C>]])
+
+
+end
+
+if mapsira==2 then
+tfm.exec.newGame([[<C><P H="800" F="0" L="3000" /><Z><S><S P="0,0,0.3,0.2,0,0,0,0" L="200" H="20" X="99" Y="790" T="17" /><S P="0,0,0.3,0.2,0,0,0,0" L="200" H="20" X="2900" Y="785" T="18" /><S P="0,0,0.3,0.2,0,0,0,0" L="80" X="376" H="20" Y="716" T="17" /><S P="0,0,0.3,0.2,-10,0,0,0" L="80" X="2600" H="20" Y="518" T="18" /><S P="0,0,0.3,0.2,-40,0,0,0" L="80" H="20" X="347" Y="546" T="17" /><S P="0,0,0.3,0.2,0,0,0,0" L="80" H="20" X="378" Y="326" T="17" /><S P="0,0,0.3,0.2,0,0,0,0" L="80" X="562" H="20" Y="203" T="17" /><S P="0,0,0.3,0.2,10,0,0,0" L="80" H="20" X="2437" Y="414" T="18" /><S P="0,0,0.3,0.2,-10,0,0,0" L="80" X="2637" H="20" Y="764" T="18" /><S P="0,0,0.3,0.2,0,0,0,0" L="80" H="20" X="2493" Y="645" T="18" /><S P="0,0,0.3,0.2,30,0,0,0" L="120" X="766" H="194" Y="285" T="17" /><S P="0,0,0.3,0.2,50,0,0,0" L="120" H="194" X="829" Y="338" T="17" /><S P="0,0,0.3,0.2,70,0,0,0" L="120" X="869" H="194" Y="413" T="17" /><S P="0,0,0.3,0.2,100,0,0,0" L="120" H="194" X="876" Y="480" T="17" /><S P="0,0,0.3,0.2,120,0,0,0" L="120" X="846" H="194" Y="563" T="17" /><S P="0,0,0.3,0.2,150,0,0,0" L="120" H="194" X="799" Y="611" T="17" /><S P="0,0,0.3,0.2,-30,0,0,0" L="120" X="2120" H="194" Y="214" T="18" /><S P="0,0,0.3,0.2,-60,0,0,0" L="120" H="194" X="2075" Y="259" T="18" /><S P="0,0,0.3,0.2,-80,0,0,0" L="120" X="2047" H="194" Y="339" T="18" /><S P="0,0,0.3,0.2,-100,0,0,0" L="120" H="194" X="2049" Y="425" T="18" /><S P="0,0,0.3,0.2,-130,0,0,0" L="120" X="2075" H="194" Y="485" T="18" /><S P="0,0,0.3,0.2,-150,0,0,0" L="120" H="194" X="2140" Y="540" T="18" /><S P="0,0,0.3,0.2,-180,0,0,0" L="120" X="2203" H="194" Y="559" T="18" /><S P="0,0,0.3,0.2,180,0,0,0" L="120" X="742" H="194" Y="627" T="17" /><S P="0,0,0.3,0.2,-10,0,0,0" L="80" H="20" X="1083" Y="237" T="17" /><S P="0,0,0.3,0.2,10,0,0,0" L="80" X="1161" H="20" Y="507" T="17" /><S P="0,0,0.3,0.2,-10,0,0,0" L="80" H="20" X="1148" Y="686" T="17" /><S P="0,0,0.3,0.2,-10,0,0,0" L="80" X="1330" H="20" Y="604" T="17" /><S P="0,0,0.3,0.2,20,0,0,0" L="80" X="1752" H="20" Y="268" T="18" /><S P="0,0,0.3,0.2,20,0,0,0" L="80" H="20" X="1632" Y="596" T="18" /><S P="0,0,0.3,0.2,-10,0,0,0" L="80" X="1732" H="20" Y="475" T="18" /><S P="0,0,0.3,0.2,0,0,0,0" L="80" X="1761" H="20" Y="701" T="18" /><S P="0,0,0.3,0.2,10,0,0,0" L="80" H="20" X="1955" Y="748" T="18" /><S P="0,0,0.3,0.2,-10,0,0,0" L="80" X="2209" H="20" Y="761" T="18" /><S P="0,0,0.3,0.2,10,0,0,0" L="80" H="20" X="2401" Y="760" T="18" /><S P="0,0,0.3,0.2,-10,0,0,0" L="80" H="20" X="1263" Y="311" T="17" /><S P="0,0,0.3,0.2,10,0,0,0" L="80" X="872" H="20" Y="112" T="17" /><S P="0,0,0.3,0.2,10,0,0,0" L="80" H="20" X="551" Y="457" T="17" /><S P="0,0,0.3,0.2,20,0,0,0" L="80" X="2318" H="20" Y="263" T="18" /><S P="0,0,0.3,0.2,-10,0,0,0" L="80" X="927" H="20" Y="785" T="17" /><S P="0,0,0.3,0.2,10,0,0,0" L="80" H="20" X="665" Y="790" T="17" /><S P="0,0,0.3,0.2,0,0,0,0" X="1497" L="300" o="6a7495" H="300" c="4" N="" Y="-165" T="12" /><S P="0,0,0.3,0.2,0,0,0,0" L="75" o="324650" X="1494" H="10" Y="-83" T="12" /><S P="0,0,0.3,0.2,-70,0,0,0" L="75" o="324650" X="1463" H="10" Y="-132" T="12" /><S P="0,0,0.3,0.2,-120,0,0,0" L="75" o="324650" H="10" X="1525" Y="-134" T="12" /><S P="0,0,0.3,0.2,-160,0,0,0" L="200" H="20" X="105" Y="636" T="17" /><S P="0,0,0.3,0.2,0,0,0,0" H="10" L="3000" o="6a7495" X="1518" c="1" N="" Y="-6" T="12" /><S P="0,0,0.3,0.2,-90,0,0,0" X="-3" L="3000" o="6a7495" H="10" c="1" N="" Y="327" T="12" /><S P="0,0,0.3,0.2,-90,0,0,0" H="10" L="3000" o="6a7495" X="3007" c="1" N="" Y="162" T="12" /><S P="0,0,0.3,0.2,160,0,0,0" L="200" H="20" X="2892" Y="649" T="18" /></S><D /><O /></Z></C>]])
+
+end
+
+if mapsira==3 then
+tfm.exec.newGame([[<C><P H="800" F="0" L="3000" /><Z><S><S P="0,0,0.3,0.2,0,0,0,0" H="300" L="300" o="6a7495" X="1496" c="4" N="" Y="-159" T="12" /><S P="0,0,0.3,0.2,0,0,0,0" L="75" o="324650" X="1493" H="10" Y="-84" T="12" /><S P="0,0,0.3,0.2,60,0,0,0" L="75" o="324650" H="10" X="1518" Y="-125" T="12" /><S P="0,0,0.3,0.2,-60,0,0,0" L="75" o="324650" H="10" X="1464" Y="-128" T="12" /><S P="0,0,0.3,0.2,0,0,0,0" L="200" X="100" H="20" Y="789" T="17" /><S P="0,0,0.3,0.2,0,0,0,0" L="200" X="2901" H="20" Y="790" T="18" /><S P="0,0,0.3,0.2,-30,0,0,0" L="120" H="20" X="320" Y="655" T="17" /><S P="0,0,0.3,0.2,0,0,0,0" L="120" X="758" H="20" Y="687" T="17" /><S P="0,0,0.3,0.2,-30,0,0,0" L="120" H="20" X="563" Y="365" T="17" /><S P="0,0,0.3,0.2,0,0,0,0" L="120" X="475" H="20" Y="517" T="17" /><S P="0,0,0.3,0.2,30,0,0,0" L="120" H="20" X="840" Y="230" T="17" /><S P="0,0,0.3,0.2,-30,0,0,0" L="120" X="2625" H="20" Y="246" T="18" /><S P="0,0,0.3,0.2,40,0,0,0" L="120" H="20" X="2355" Y="430" T="18" /><S P="0,0,0.3,0.2,0,0,0,0" L="120" X="2551" H="20" Y="698" T="18" /><S P="0,0,0.3,0.2,-20,0,0,0" L="120" H="20" X="2237" Y="704" T="18" /><S P="0,0,0.3,0.2,-120,0,0,0" L="120" X="1393" H="200" Y="465" T="17" /><S P="0,0,0.3,0.2,210,0,0,0" L="120" X="1438" H="200" Y="516" T="18" /><S P="0,0,0.3,0.2,-180,0,0,0" L="120" H="200" X="1498" Y="533" T="17" /><S P="0,0,0.3,0.2,150,0,0,0" L="120" H="200" X="1560" Y="515" T="18" /><S P="0,0,0.3,0.2,-230,0,0,0" L="120" X="1623" H="200" Y="460" T="17" /><S P="0,0,0.3,0.2,100,0,0,0" L="120" X="1649" H="200" Y="400" T="18" /><S P="0,0,0.3,0.2,-280,0,0,0" L="120" H="200" X="1649" Y="318" T="17" /><S P="0,0,0.3,0.2,50,0,0,0" L="120" H="200" X="1625" Y="259" T="18" /><S P="0,0,0.3,0.2,-440,0,0,0" L="120" X="1436" H="200" Y="311" T="17" /><S P="0,0,0.3,0.2,-340,0,0,0" L="120" X="1573" H="200" Y="223" T="17" /><S P="0,0,0.3,0.2,-40,0,0,0" L="120" H="200" X="1456" Y="269" T="18" /><S P="0,0,0.3,0.2,-20,0,0,0" L="120" H="200" X="1528" Y="225" T="18" /><S P="0,0,0.3,0.2,-100,0,0,0" L="120" X="1435" H="200" Y="392" T="18" /><S P="0,0,0.3,0.2,-150,0,0,0" X="1450" L="120" H="200" c="1" Y="413" T="17" /><S P="0,0,0.3,0.2,160,0,0,0" L="120" X="1477" H="200" Y="413" T="18" /><S P="0,0,0.3,0.2,-220,0,0,0" L="120" H="200" X="1547" Y="369" T="17" /><S P="0,0,0.3,0.2,-10,0,0,0" L="120" X="1051" H="20" Y="320" T="17" /><S P="0,0,0.3,0.2,-10,0,0,0" L="120" H="20" X="1274" Y="150" T="17" /><S P="0,0,0.3,0.2,-10,0,0,0" L="120" X="1976" H="20" Y="198" T="17" /><S P="0,0,0.3,0.2,-20,0,0,0" L="120" X="2291" H="20" Y="189" T="18" /><S P="0,0,0.3,0.2,-20,0,0,0" L="120" X="2003" H="20" Y="568" T="18" /><S P="0,0,0.3,0.2,0,0,0,0" L="120" H="20" X="1738" Y="733" T="18" /><S P="0,0,0.3,0.2,10,0,0,0" L="120" X="1459" H="20" Y="761" T="18" /><S P="0,0,0.3,0.2,10,0,0,0" L="120" H="20" X="1158" Y="720" T="18" /><S P="0,0,0.3,0.2,-20,0,0,0" L="120" X="974" H="20" Y="549" T="18" /><S P="0,0,0.3,0.2,-20,0,0,0" L="120" X="2675" H="20" Y="507" T="18" /><S P="0,0,0.3,0.2,0,0,0,0" X="1499" L="3000" o="6a7495" H="10" c="1" N="" Y="-6" T="12" /><S P="0,0,0.3,0.2,-90,0,0,0" H="10" L="3000" o="6a7495" X="-4" c="1" N="" Y="354" T="12" /><S P="0,0,0.3,0.2,-90,0,0,0" X="3008" L="3000" o="6a7495" H="10" c="1" N="" Y="318" T="12" /></S><D /><O /></Z></C>]])
+
+end
+
+if mapsira==4 then
+tfm.exec.newGame([[
+<C><P H="800" F="1" L="3000" /><Z><S><S P="0,0,0.3,0.2,0,0,0,0" X="1496" L="3000" o="6a7495" H="10" c="1" N="" Y="-8" T="12" /><S P="0,0,0.3,0.2,0,0,0,0" L="75" o="324650" H="10" X="1493" Y="-84" T="12" /><S P="0,0,0.3,0.2,60,0,0,0" L="75" o="324650" H="10" X="1518" Y="-125" T="12" /><S P="0,0,0.3,0.2,-60,0,0,0" L="75" o="324650" X="1464" H="10" Y="-128" T="12" /><S P="0,0,0.3,0.2,0,0,0,0" L="200" X="100" H="20" Y="792" T="17" /><S P="0,0,0.3,0.2,-50,0,0,0" L="160" X="387" H="40" Y="645" T="17" /><S P="0,0,0.3,0.2,40,0,0,0" L="160" X="642" H="40" Y="510" T="17" /><S P="0,0,0.3,0.2,10,0,0,0" L="160" X="797" H="40" Y="756" T="17" /><S P="0,0,0.3,0.2,30,0,0,0" L="160" X="172" H="40" Y="388" T="17" /><S P="0,0,0.3,0.2,-10,0,0,0" L="160" X="1360" H="40" Y="731" T="17" /><S P="0,0,0.3,0.2,50,0,0,0" L="160" X="1353" H="150" Y="488" T="17" /><S P="0,0,0.3,0.2,60,0,0,0" L="160" X="1270" H="150" Y="368" T="17" /><S P="0,0,0.3,0.2,100,0,0,0" L="160" X="1254" H="150" Y="271" T="17" /><S P="0,0,0.3,0.2,0,0,0,0" L="200" X="2898" H="20" Y="792" T="18" /><S P="0,0,0.3,0.2,0,0,0,0" H="300" L="300" o="6a7495" X="1536" c="4" N="" Y="-159" T="12" /><S P="0,0,0.3,0.2,-90,0,0,0" H="10" L="3000" o="6a7495" X="-7" c="1" N="" Y="330" T="12" /><S P="0,0,0.3,0.2,-90,0,0,0" L="3000" o="6a7495" H="10" X="3009" N="" Y="285" T="12" /><S P="0,0,0.3,0.2,-50,0,0,0" L="160" H="150" X="1647" Y="487" T="18" /><S P="0,0,0.3,0.2,20,0,0,0" L="160" H="40" X="1858" Y="730" T="18" /><S P="0,0,0.3,0.2,-10,0,0,0" L="160" H="40" X="2308" Y="512" T="18" /><S P="0,0,0.3,0.2,-20,0,0,0" L="160" H="40" X="2655" Y="364" T="18" /><S P="0,0,0.3,0.2,20,0,0,0" L="160" H="40" X="2702" Y="659" T="18" /><S P="0,0,0.3,0.2,-20,0,0,0" L="160" H="40" X="2090" Y="291" T="18" /><S P="0,0,0.3,0.2,-60,0,0,0" L="160" H="150" X="1727" Y="368" T="18" /><S P="0,0,0.3,0.2,-100,0,0,0" L="160" H="150" X="1744" Y="271" T="18" /><S P="0,0,0.3,0.2,-20,0,0,0" L="160" X="578" H="40" Y="275" T="17" /><S P="0,0,0.3,0.2,20,0,0,0" L="160" X="926" H="40" Y="230" T="17" /><S P="0,0,0.3,0.2,-10,0,0,0" L="160" H="40" X="2291" Y="759" T="18" /><S P="0,0,0.3,0.2,10,0,0,0" L="160" H="40" X="1907" Y="524" T="18" /><S P="0,0,0.3,0.2,20,0,0,0" L="160" X="1023" H="40" Y="578" T="17" /></S><D /><O /><L /></Z></C>]])
+
+end
+
+if mapsira==5 then
+tfm.exec.newGame([[<C><P F="1" L="3000" H="800" /><Z><S><S P="0,0,0.3,0.2,0,0,0,0" L="3000" o="6a7495" X="1496" c="1" N="" Y="-8" T="12" H="10" /><S P="0,0,0.3,0.2,0,0,0,0" L="75" o="324650" X="1493" Y="-84" T="12" H="10" /><S P="0,0,0.3,0.2,60,0,0,0" L="75" o="324650" X="1518" Y="-125" T="12" H="10" /><S P="0,0,0.3,0.2,-60,0,0,0" L="75" o="324650" H="10" Y="-128" T="12" X="1464" /><S P="0,0,0.3,0.2,0,0,0,0" L="200" H="20" Y="789" T="17" X="100" /><S P="0,0,0.3,0.2,0,0,0,0" L="200" H="20" Y="790" T="18" X="2901" /><S H="300" L="300" o="6a7495" X="1465" c="4" N="" Y="-172" T="12" P="0,0,0.3,0.2,0,0,0,0" /><S H="10" L="3000" o="6a7495" X="-7" c="1" N="" Y="330" T="12" P="0,0,0.3,0.2,-90,0,0,0" /><S X="3005" L="3000" o="6a7495" H="10" c="1" N="" Y="285" T="12" P="0,0,0.3,0.2,-90,0,0,0" /><S L="200" H="40" X="36" Y="682" T="17" P="0,0,0.3,0.2,120,0,0,0" /><S L="200" X="168" H="40" Y="576" T="17" P="0,0,0.3,0.2,160,0,0,0" /><S L="200" H="40" X="280" Y="747" T="17" P="0,0,0.3,0.2,-30,0,0,0" /><S L="200" X="2720" H="40" Y="738" T="18" P="0,0,0.3,0.2,40,0,0,0" /><S L="200" H="40" X="2960" Y="700" T="18" P="0,0,0.3,0.2,-120,0,0,0" /><S L="200" X="2825" H="40" Y="588" T="18" P="0,0,0.3,0.2,-160,0,0,0" /><S L="40" H="100" X="607" Y="641" T="17" P="0,0,0.3,0.2,0,0,0,0" /><S L="40" X="426" H="100" Y="418" T="17" P="0,0,0.3,0.2,20,0,0,0" /><S L="40" H="100" X="725" Y="362" T="17" P="0,0,0.3,0.2,-30,0,0,0" /><S L="40" X="362" H="100" Y="219" T="17" P="0,0,0.3,0.2,30,0,0,0" /><S L="40" H="100" X="769" Y="156" T="17" P="0,0,0.3,0.2,30,0,0,0" /><S L="40" H="100" X="2401" Y="703" T="18" P="0,0,0.3,0.2,0,0,0,0" /><S c="4" L="680" H="600" X="1449" Y="499" T="10" P="0,0,0.3,0,0,0,0,0" /><S L="40" X="2529" H="100" Y="442" T="18" P="0,0,0.3,0.2,-20,0,0,0" /><S L="40" H="100" X="2557" Y="212" T="18" P="0,0,0.3,0.2,-20,0,0,0" /><S L="40" X="2209" H="100" Y="264" T="18" P="0,0,0.3,0.2,20,0,0,0" /><S L="40" H="100" X="2226" Y="505" T="18" P="0,0,0.3,0.2,20,0,0,0" /><S c="4" L="160" H="726" X="1065" Y="438" T="10" P="0,0,0.3,0,0,0,0,0" /><S c="4" L="160" X="1846" H="726" Y="438" T="10" P="0,0,0.3,0,0,0,0,0" /><S c="4" L="40" H="40" X="1006" Y="57" T="10" P="0,0,0.3,0,0,0,0,0" /><S c="4" L="40" X="1125" H="40" Y="56" T="10" P="0,0,0.3,0,0,0,0,0" /><S c="4" L="40" H="40" X="1068" Y="54" T="10" P="0,0,0.3,0,0,0,0,0" /><S c="4" L="40" X="1787" H="40" Y="55" T="10" P="0,0,0.3,0,0,0,0,0" /><S c="4" L="40" H="40" X="1849" Y="55" T="10" P="0,0,0.3,0,0,0,0,0" /><S c="4" L="40" H="40" X="1906" Y="53" T="10" P="0,0,0.3,0,0,0,0,0" /><S L="120" H="40" X="1066" Y="189" T="10" P="0,0,0.3,0,0,0,0,0" /><S L="120" X="1204" H="40" Y="423" T="10" P="0,0,0.3,0,0,0,0,0" /><S L="120" H="40" X="1425" Y="608" T="10" P="0,0,0.3,0,0,0,0,0" /><S L="120" X="1706" H="40" Y="423" T="10" P="0,0,0.3,0,0,0,0,0" /><S L="120" H="40" X="1845" Y="189" T="10" P="0,0,0.3,0,0,0,0,0" /><S L="120" H="40" X="898" Y="668" T="10" P="0,0,0.3,0,0,0,0,0" /><S L="120" X="2019" H="40" Y="644" T="10" P="0,0,0.3,0,0,0,0,0" /></S><D /><O /></Z></C>]])
+
+end
+
+if mapsira==6 then
+tfm.exec.newGame(5)
+end
+
+if mapsira==7 then
+tfm.exec.newGame(6)
+end
+
+print("Map ID: "..mapsira)
+mapsira={}
+tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puank.."</j>-<rose>"..puans.."",nil,53,30,700,nil,0,1,0,true)
+end
+maps()
+
+
+function pythag(x1,y1,x2,y2,r)
+local x=x2-x1
+local y=y2-y1
+local r=r+r
+return x*x+y*y<r*r
+end
+
+local ara = 70
+takim={}
+zipla={}
+team=0
+yetenek={}
+can={}
+win={}
+
+function eventNewPlayer(name)
+
+
+if tfm.get.room.playerList[name].community=="tr" or tfm.get.room.playerList[name].community=="en" or tfm.get.room.playerList[name].community=="pl" or tfm.get.room.playerList[name].community=="es" or tfm.get.room.playerList[name].community=="br" or tfm.get.room.playerList[name].community=="fr" then
+if tfm.get.room.playerList[name].community=="tr" then
+lang[name]={
+dlq="Yakındaki Farenin 2 canından 1 tanesini alır.",
+dle="Yakındaki Fareyi kısa süreliğine dondurur.",
+dlf="Basılı tuttuğun sürece seni bir ninja gibi gizler.",
+dls="veya Eğilme tuşu:</j><n> Ne kadar uzun Süre basarsan o kadar yukarıya zıplarsın.",
+dlbaslangic="Karşı takımın Doğduğu Alana giderek takımına 1 sayı kazandır. 3 sayıya ulaşan takım kazanır!.",
+dlytnk="Yetenekler",
+
+}
+end
+if tfm.get.room.playerList[name].community=="en" then
+lang[name]={
+dlq="Takes 1 of 2 health of nearby Mouse",
+dle="Freezes nearby Mouse briefly.",
+dlf="As long as you hold it down it hides you like a ninja.",
+dls="or Down key:</j><n> The longer you press, the higher it jumps.",
+dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
+dlytnk="Abilities:",
+
+}
+end
+
+if tfm.get.room.playerList[name].community=="pl" then
+lang[name]={
+dlq="Takes 1 of 2 health of nearby Mouse",
+dle="Freezes nearby Mouse briefly.",
+dlf="As long as you hold it down it hides you like a ninja.",
+dls="or Down key:</j><n> The longer you press, the higher it jumps.",
+dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
+dlytnk="Abilities:",
+
+}
+end
+
+if tfm.get.room.playerList[name].community=="br" then
+lang[name]={
+dlq="Takes 1 of 2 health of nearby Mouse",
+dle="Freezes nearby Mouse briefly.",
+dlf="As long as you hold it down it hides you like a ninja.",
+dls="or Down key:</j><n> The longer you press, the higher it jumps.",
+dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
+dlytnk="Abilities:",
+
+}
+end
+
+if tfm.get.room.playerList[name].community=="es" then
+lang[name]={
+dlq="Takes 1 of 2 health of nearby Mouse",
+dle="Freezes nearby Mouse briefly.",
+dlf="As long as you hold it down it hides you like a ninja.",
+dls="or Down key:</j><n> The longer you press, the higher it jumps.",
+dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
+dlytnk="Abilities:",
+
+}
+end
+
+if tfm.get.room.playerList[name].community=="fr" then
+lang[name]={
+dlq="Takes 1 of 2 health of nearby Mouse",
+dle="Freezes nearby Mouse briefly.",
+dlf="As long as you hold it down it hides you like a ninja.",
+dls="or Down key:</j><n> The longer you press, the higher it jumps.",
+dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
+dlytnk="Abilities:",
+
+}
+end
+
+else
+
+lang[name]={
+dlq="Takes 1 of 2 health of nearby Mouse",
+dle="Freezes nearby Mouse briefly.",
+dlf="As long as you hold it down it hides you like a ninja.",
+dls="or Down key:</j><n> The longer you press, the higher it jumps.",
+dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
+dlytnk="Abilities:",
+
+}
+
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+tfm.exec.chatMessage("<t>---------"..lang[name].dlytnk.."-----------",name)
+tfm.exec.chatMessage("<rose>Q:</rose> <n>"..lang[name].dlq,name)
+tfm.exec.chatMessage("<J>E:</j> <n>"..lang[name].dle,name)
+tfm.exec.chatMessage("<rose>F:</rose> <n>"..lang[name].dlf,name)
+tfm.exec.chatMessage("<J>S "..lang[name].dls,name)
+tfm.exec.chatMessage("<t>------------------------------",name)
+tfm.exec.chatMessage("<J><n>"..lang[name].dlbaslangic,name)
+tfm.exec.chatMessage("<t>------------------------------",name)
+
+--ui.addTextArea(62,"",name,0,0,800,400,0x000000,0x000001,500,true)
+--ui.addTextArea(63,"<font size='30' color='#FF8595'><a href='event:tr'>TR",name,200,150,n,n,0x000000,0x000001,500,true)
+--ui.addTextArea(64,"<font size='30' color='#FF8595'><a href='event:en'>EN",name,600,150,n,n,0x000000,0x000001,500,true)
+
+tfm.exec.killPlayer(name)
+tfm.exec.respawnPlayer(name)
+
+zipla[name]={ziplaa=0,ziplamaa=0}
+takim[name]={takima=0}
+yetenek[name]={q=0,e=0,f=0,esure=0,fx=0,fy=0}
+can[name]={cana=2}
+win[name]={wina=0}
+ui.addTextArea(1,"<font size='25' color='#0076FF'> Q",name,10,370,40,30,0x000000,0x000001,500,true)
+ui.addTextArea(2,"<font size='25' color='#0076FF'> E",name,60,370,40,30,0x000000,0x000001,500,true)
+ui.addTextArea(3,"<font size='25' color='#0076FF'> F",name,110,370,50,30,0x000000,0x000001,500,true)
+ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,name,10,20,n,30,0x000000,0x000001,500,true)
+if team==0 then
+tfm.exec.movePlayer(name,2970,770)
+tfm.exec.setNameColor(name,0xF077AF)
+takim[name].takima=1
+team=team+1
+elseif team==1 then
+tfm.exec.movePlayer(name,20,770)
+tfm.exec.setNameColor(name,0xCDCE20)
+takim[name].takima=2
+team=team-1
+end
+
+for i,key in ipairs({40}) do
+tfm.exec.bindKeyboard(name, key, true, true)
+tfm.exec.bindKeyboard(name, key, false, true)
+end
+for i,key in ipairs({83}) do
+tfm.exec.bindKeyboard(name, key, true, true)
+tfm.exec.bindKeyboard(name, key, false, true)
+end
+for i,key in ipairs({81}) do
+tfm.exec.bindKeyboard(name, key, true, true)
+end
+
+for i,key in ipairs({69}) do
+tfm.exec.bindKeyboard(name, key, true, true)
+end
+
+for i,key in ipairs({70}) do
+tfm.exec.bindKeyboard(name, key, true, true)
+tfm.exec.bindKeyboard(name, key, false, true)
+end
+end
+
+for name,player in pairs(tfm.get.room.playerList) do
+eventNewPlayer(name)
+end
+
+function eventKeyboard(name, key, down, x, y)
+
+if basadon==0 then
+if key == 81 then
+if yetenek[name].q==0 then
+
+
+
+tfm.exec.displayParticle(13,tfm.get.room.playerList[name].x,tfm.get.room.playerList[name].y-60,0,-6,0,0,name)
+
+tfm.exec.displayParticle(13,tfm.get.room.playerList[name].x-60,tfm.get.room.playerList[name].y,0,-6,0,0,name)
+
+tfm.exec.displayParticle(13,tfm.get.room.playerList[name].x,tfm.get.room.playerList[name].y+60,0,-6,0,0,name)
+
+tfm.exec.displayParticle(13,tfm.get.room.playerList[name].x+60,tfm.get.room.playerList[name].y,0,-6,0,0,name)
+
+tfm.exec.displayParticle(13,tfm.get.room.playerList[name].x-50,tfm.get.room.playerList[name].y-50,0,-6,0,0,name)
+
+tfm.exec.displayParticle(13,tfm.get.room.playerList[name].x+50,tfm.get.room.playerList[name].y-50,0,-6,0,0,name)
+
+tfm.exec.displayParticle(13,tfm.get.room.playerList[name].x-50,tfm.get.room.playerList[name].y+50,0,-6,0,0,name)
+
+tfm.exec.displayParticle(13,tfm.get.room.playerList[name].x+50,tfm.get.room.playerList[name].y+50,0,-6,0,0,name)
+
+tfm.exec.displayParticle(13,200,308,0,-6,0,0,name)
+for o, data in pairs(tfm.get.room.playerList) do
+local xU, yU = math.abs(x - data.x), math.abs(y - data.y)
+if takim[name].takima==1 then
+if xU < ara and yU < ara and o ~= name then
+if takim[o].takima==2 then
+can[o].cana=can[o].cana-1
+tfm.exec.displayParticle(5,tfm.get.room.playerList[o].x,tfm.get.room.playerList[o].y,0,-6,0,0,name)
+ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,o,10,20,n,30,0x000000,0x000001,500,true)
+tfm.exec.chatMessage("<rose>"..name.."</rose> attack "..o..". Healt: "..can[o].cana)
+end
+end
+end
+if takim[name].takima==2 then
+if xU < ara and yU < ara and o ~= name then
+if takim[o].takima==1 then
+can[o].cana=can[o].cana-1
+ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,o,10,20,n,30,0x000000,0x000001,500,true)
+tfm.exec.chatMessage("<rose>"..name.."</rose> attack "..o..". Healt: "..can[o].cana)
+end
+end
+end
+end
+yetenek[name].q=10
+end
+end
+
+if key == 69 then
+if yetenek[name].e==0 then
+ui.addTextArea(30,"",name,tfm.get.room.playerList[name].x-35,tfm.get.room.playerList[name].y-35,70,70,0x7BD6DA,0x7BD6DA,0.2)
+for o, data in pairs(tfm.get.room.playerList) do
+local xU, yU = math.abs(x - data.x), math.abs(y - data.y)
+if takim[name].takima==1 then
+if xU < ara and yU < ara and o ~= name then
+if takim[o].takima==2 then
+tfm.exec.freezePlayer(o,true)
+yetenek[o].esure=5
+end
+end
+end
+if takim[name].takima==2 then
+if xU < ara and yU < ara and o ~= name then
+if takim[o].takima==1 then
+tfm.exec.freezePlayer(o,true)
+yetenek[o].esure=5
+end
+end
+end
+end
+yetenek[name].e=7
+end
+end
+
+
+if key == 70 then
+if yetenek[name].f==0 then
+if down then
+yetenek[name].fx=x
+yetenek[name].fy=y
+tfm.exec.movePlayer(name,1500,-100,false)
+ui.addTextArea(3,"<font size='25' color='#FF0000'> F",name,110,370,50,30,0x000000,0xFF0000,500,true)
+else
+tfm.exec.movePlayer(name,yetenek[name].fx,yetenek[name].fy,false)
+yetenek[name].f=35
+end
+end
+end
+
+
+if key == 40  or key==83 then
+if down then
+zipla[name].ziplaa=1
+else
+tfm.exec.movePlayer(name,0,0,true,0,zipla[name].ziplamaa,false)
+print(zipla[name].ziplamaa)
+zipla[name].ziplaa=0
+zipla[name].ziplamaa=0
+end
+end
+end
+end
+
+
+
+function eventLoop()
+
+if basadon>0 then
+
+basadon=basadon-1
+end
+
+if basadon==1 then
+maps()
+for name,player in pairs(tfm.get.room.playerList) do
+tfm.exec.killPlayer(name)
+end
+for name,player in pairs(tfm.get.room.playerList) do
+eventNewPlayer(name)
+end
+end
+for name,player in pairs(tfm.get.room.playerList) do
+if zipla[name].ziplaa==1 then
+if zipla[name].ziplamaa>=-120 then
+print("sss")
+zipla[name].ziplamaa=zipla[name].ziplamaa-40
+end
+end
+
+
+
+
+
+
+if takim[name].takima==1 then
+if pythag( 20, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
+tfm.exec.killPlayer(name)
+
+puank=puank+1
+tfm.exec.chatMessage("<j>"..name.." Sayesinde <rose>KIRMIZI</rose> takım 1 Puan kazandı ve Puanları:"..puank)
+tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
+
+end
+end
+
+
+
+
+
+
+
+
+
+if takim[name].takima==2 then
+if pythag( 2950, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
+tfm.exec.killPlayer(name)
+puans=puans+1
+tfm.exec.chatMessage("<j>"..name.." Sayesinde <J>SARI</rose> takım 1 Puan kazandı ve Puanları:"..puans)
+tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
+end
+end
+
+
+
+
+
+---1
+if puank==3 then
+mapsira=math.random(1,5)
+
+tfm.exec.chatMessage("<j>"..name.." Sayesinde <rose>KIRMIZI</rose> takım kazandı.")
+
+win[name].wina=win[name].wina+1
+
+basadon=20
+tfm.exec.killPlayer(name)
+tfm.exec.newGame([[<C><P F="0" /><Z><S><S L="400" X="200" H="100" Y="355" T="17" P="0,0,0.3,0.2,0,0,0,0" /><S L="400" X="600" H="100" Y="355" T="18" P="0,0,0.3,0.2,0,0,0,0" /></S><D /><O /></Z></C>]])
+for name,player in pairs(tfm.get.room.playerList) do
+eventNewPlayer(name)
+tfm.exec.movePlayer(name,400,200)
+ui.removeTextArea(62,name)
+ui.removeTextArea(64,name)
+ui.removeTextArea(63,name)
+puans=0
+puank=0
+end
+end
+
+---2
+if puans==3 then
+tfm.exec.chatMessage("<rose>"..name.." Sayesinde <j>SARI</j> takım kazandı.")
+mapsira=math.random(1,5)
+win[name].wina=win[name].wina+1
+tfm.exec.killPlayer(name)
+basadon=20
+tfm.exec.killPlayer(name)
+tfm.exec.newGame([[<C><P F="0" /><Z><S><S L="400" X="200" H="100" Y="355" T="17" P="0,0,0.3,0.2,0,0,0,0" /><S L="400" X="600" H="100" Y="355" T="18" P="0,0,0.3,0.2,0,0,0,0" /></S><D /><O /></Z></C>]])
+for name,player in pairs(tfm.get.room.playerList) do
+eventNewPlayer(name)
+tfm.exec.movePlayer(name,400,200)
+ui.removeTextArea(62,name)
+ui.removeTextArea(64,name)
+ui.removeTextArea(63,name)
+puans=0
+puank=0
+end
+end
+
+
+
+
+
+
+
+
+
+
+
+if can[name].cana==0 then
+tfm.exec.killPlayer(name)
+tfm.exec.chatMessage(name.." is Dead.")
+can[name].cana=2
+ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,name,10,20,n,30,0x000000,0x000001,500,true)
+end
+
+if yetenek[name].esure>0 then
+yetenek[name].esure=yetenek[name].esure-1
+print(yetenek[name].esure)
+end
+if yetenek[name].esure==1 then
+tfm.exec.freezePlayer(name,false)
+end
+
+if yetenek[name].q>0 then
+yetenek[name].q=yetenek[name].q-1
+ui.addTextArea(1,"<font size='25' color='#0076FF'> "..yetenek[name].q,name,10,370,40,30,0x000000,0x000001,500,true)
+end
+
+if yetenek[name].q==0 then
+ui.addTextArea(1,"<font size='25' color='#0076FF'> Q",name,10,370,40,30,0x000000,0x000001,500,true)
+end
+
+if yetenek[name].e>0 then
+yetenek[name].e=yetenek[name].e-1
+ui.addTextArea(2,"<font size='25' color='#0076FF'> "..yetenek[name].e,name,60,370,40,30,0x000000,0x000001,500,true)
+end
+
+if yetenek[name].e==0 then
+ui.removeTextArea(30,name)
+ui.addTextArea(2,"<font size='25' color='#0076FF'> E",name,60,370,40,30,0x000000,0x000001,500,true)
+end
+
+if yetenek[name].f>0 then
+yetenek[name].f=yetenek[name].f-1
+ui.addTextArea(3,"<font size='25' color='#0076FF'> "..yetenek[name].f,name,110,370,50,30,0x000000,0x000001,500,true)
+else
+ui.addTextArea(3,"<font size='25' color='#0076FF'> F",name,110,370,50,30,0x000000,0x000001,500,true)
+end
+end
+end
+
+function eventPlayerDied(name)
+can[name].cana=2
+tfm.exec.respawnPlayer(name)
+yetenek[name].fx=-500
+yetenek[name].fy=-900
+ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,name,10,20,n,30,0x000000,0x000001,500,true)
+if basadon==0 then
+if takim[name].takima==1 then
+tfm.exec.movePlayer(name,2980,770)
+tfm.exec.setNameColor(name,0xF077AF)
+end
+if takim[name].takima==2 then
+tfm.exec.movePlayer(name,20,770)
+tfm.exec.setNameColor(name,0xCDCE20)
+end
+end
+end
+
+function eventTextAreaCallback(id, name, callback)
+if callback=="tr" then
+ui.addTextArea(61,"<p align='center'><font size='15' color='#FF8595'>Selam fareler, yeni minioyun un test odasına hoşgeldiniz.</font><br><br> <font size='14'><b>Q yeteneği:<br></b> Bastığınız zaman sizin yarıçapınızdaki küçük bir alanda olan farelerin 2 canından 1 tanesini alıyor ve eğer o farenin hiç canı kalmamışsa Ölüyor :) <br><br><b>E Yeteneği:</b><br> Etrafınızdaki fareleri kısa bir süreliğine dondurmanızı yarıyor <br><br><b>F yeteneği:<br></b> sizleri bir ninja gibi görünmez hale getiriyor F tuşuna basılı tuttuğunuz sürece gizemli kalmaya devam edebilirsiniz ;)<br><br> <b>Ve en önemli yeteneklerden birisi S ve Aşağı Tuşu:</b><br> ne kadar uzun süre absarsanız sizi bi o kadar havaya savuran bir yetenek.<br><b><br> KARŞI TARAFIN DOĞDUĞU YERE İLK GİDEN TAKIM KAZANIR<br> BOL ŞANS",name,100,40,600,300,0x000000,0x000001,500,true)
+ui.addTextArea(16,"<font size='30' color='#FF8595'><a href='event:helpkapat'>Okudum ve oynamaya Hazırım (Tıka)",name,110,350,n,n,0x000000,0x000000,500,true)
+ui.removeTextArea(62,name)
+ui.removeTextArea(64,name)
+ui.removeTextArea(63,name)
+end
+if callback=="en" then
+ui.addTextArea(61,"<p align='center'><font size='15' color='#FF8595'>Hello mices, Welcome to test of new minigame.</font><br><br> <font size='14'><b>Q Skill:<br></b> When you press Q, mice near to you get one heart damage. If mice have 1 heart, it dies. <br><br><b>E Skill:</b><br> When you press E, mice near to you freeze for a few seconds. <br><br><b>F Skill:<br></b> Makes you invisible like a ninja! If you hold F key it makes you invisible.<br><br> <b>And one of the most important skill is the S and Down Key:</b><br> the longer you hold it, the more it flies you up.<br><b><br> The first mice to enter enemy spawn area wins!<br>",name,100,40,600,300,0x000000,0x000001,500,true)
+ui.addTextArea(16,"<font size='23' color='#FF8595'><a href='event:helpkapat'>I read all of the information and I'm ready to play! (Click)",name,100,315,n,n,0x000000,0x000000,500,true)
+ui.removeTextArea(62,name)
+ui.removeTextArea(64,name)
+ui.removeTextArea(63,name)
+end
+if callback=="helpkapat" then
+ui.removeTextArea(61,name)
+ui.removeTextArea(16,name)
+end
+end
+
+function eventChatMessage(name,message)
+for name,player in pairs(tfm.get.room.playerList) do
+if message==name then
+tfm.exec.chatMessage(message.." is wins: "..win[message].wina)
+end
+end
+end
