@@ -479,11 +479,3 @@ ui.removeTextArea(61,name)
 ui.removeTextArea(16,name)
 end
 end
-
-function eventChatMessage(name,message)
-for name,player in pairs(tfm.get.room.playerList) do
-if message==name then
-tfm.exec.chatMessage(message.." is wins: "..win[message].wina)
-end
-end
-end
