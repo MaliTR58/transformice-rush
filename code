@@ -354,7 +354,6 @@ else
 tfm.exec.movePlayer(name,0,0,true,0,zipla[name].ziplamaa,false)
 zipla[name].ziplaa=0
 zipla[name].ziplamaa=0
-egilmeresmi = tfm.exec.addImage(resim1, ":1", 739, 342, name)
 end
 end
 end
@@ -409,7 +408,6 @@ tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..
 
 end
 end
-
 if can[name].canadan==1 then
 if can[name].cana==1 then
 tfm.exec.removeImage(kalp2[name])
@@ -477,7 +475,9 @@ if can[name].cana==0 then
 tfm.exec.killPlayer(name)
 tfm.exec.chatMessage(name.." is Dead.")
 can[name].cana=2
+
 end
+
 
 if yetenek[name].esure>0 then
 yetenek[name].esure=yetenek[name].esure-1
