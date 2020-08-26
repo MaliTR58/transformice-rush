@@ -138,14 +138,8 @@ dlytnk="Abilities:",
 end
 
 
-tfm.exec.chatMessage("<t>---------"..lang[name].dlytnk.."-----------",name)
-tfm.exec.chatMessage("<rose>Q:</rose> <n>"..lang[name].dlq,name)
-tfm.exec.chatMessage("<J>E:</j> <n>"..lang[name].dle,name)
-tfm.exec.chatMessage("<rose>F:</rose> <n>"..lang[name].dlf,name)
-tfm.exec.chatMessage("<J>S "..lang[name].dls,name)
-tfm.exec.chatMessage("<t>------------------------------",name)
-tfm.exec.chatMessage("<J><n>"..lang[name].dlbaslangic,name)
-tfm.exec.chatMessage("<t>------------------------------",name)
+tfm.exec.chatMessage("<n>Please type <j>!help</j> for help.</n>",name)
+
 
 
 tfm.exec.killPlayer(name)
