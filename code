@@ -354,6 +354,7 @@ else
 tfm.exec.movePlayer(name,0,0,true,0,zipla[name].ziplamaa,false)
 zipla[name].ziplaa=0
 zipla[name].ziplamaa=0
+egilmeresmi = tfm.exec.addImage(resim1, ":1", 739, 342, name)
 end
 end
 end
