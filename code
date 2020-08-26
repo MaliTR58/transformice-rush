@@ -361,7 +361,7 @@ if pythag( 20, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name
 tfm.exec.killPlayer(name)
 
 puank=puank+1
-tfm.exec.chatMessage("<n>"..name.." thanks to her. <rose>Red</rose>The red team scored 1 point. Point is:"..puank)
+tfm.exec.chatMessage("<n>"..name.." thanks to her. <rose>Red</rose> The red team scored 1 point. Point is:"..puank)
 tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
 
 end
@@ -372,7 +372,7 @@ if takim[name].takima==2 then
 if pythag( 2950, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
 tfm.exec.killPlayer(name)
 puans=puans+1
-tfm.exec.chatMessage("<n>"..name.." thanks to her. <J>Yellow</rose>The yellow team scored 1 point. Point is:"..puans)
+tfm.exec.chatMessage("<n>"..name.." thanks to her. <J>Yellow</J> The yellow team scored 1 point. Point is:"..puans)
 tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
 end
 end
