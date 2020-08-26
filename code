@@ -10,6 +10,9 @@ puank=0
 
 lang={}
 
+health1 = "1742c3f29d3.png"
+health2 = "1742c3f79e5.png"
+
 function maps()
 
 if mapsira==1 then
@@ -68,7 +71,17 @@ yetenek={}
 can={}
 win={}
 
+
+
+kalp1={}
+kalp2={}
+
+
+
+
+
 function eventNewPlayer(name)
+
 
 
 if tfm.get.room.playerList[name].community=="tr" or tfm.get.room.playerList[name].community=="en" or tfm.get.room.playerList[name].community=="pl" or tfm.get.room.playerList[name].community=="es" or tfm.get.room.playerList[name].community=="br" or tfm.get.room.playerList[name].community=="fr" then
@@ -170,6 +183,11 @@ tfm.exec.chatMessage("<t>------------------------------",name)
 
 tfm.exec.killPlayer(name)
 tfm.exec.respawnPlayer(name)
+tfm.exec.removeImage(kalp1[name])
+tfm.exec.removeImage(kalp2[name])
+kalp1[name] = tfm.exec.addImage(health1,"$"..name,-21,-35)
+kalp2[name] = tfm.exec.addImage(health2,"$"..name,-20,-34)
+
 
 zipla[name]={ziplaa=0,ziplamaa=0} --Jump times variable
 takim[name]={takima=0} --İs team variable
@@ -179,7 +197,7 @@ win[name]={wina=0} -- Winsvariable
 ui.addTextArea(1,"<font size='25' color='#0076FF'> Q",name,10,360,40,35,0x000000,0x000001,500,true)
 ui.addTextArea(2,"<font size='25' color='#0076FF'> E",name,60,370,40,30,0x000000,0x000001,500,true)
 ui.addTextArea(3,"<font size='25' color='#0076FF'> F",name,110,370,50,30,0x000000,0x000001,500,true)
-ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,name,10,20,n,30,0x000000,0x000001,500,true)
+
 if team==0 then
 tfm.exec.movePlayer(name,2970,770)
 tfm.exec.setNameColor(name,0xF077AF)
@@ -213,6 +231,9 @@ tfm.exec.bindKeyboard(name, key, true, true)
 tfm.exec.bindKeyboard(name, key, false, true)
 end
 end
+
+
+
 
 for name,player in pairs(tfm.get.room.playerList) do
 eventNewPlayer(name)
@@ -251,10 +272,11 @@ if xU < ara and yU < ara and o ~= name then
 if takim[o].takima==2 then
 
 can[o].cana=can[o].cana-1
+
 tfm.exec.displayParticle(5,tfm.get.room.playerList[o].x,tfm.get.room.playerList[o].y,0,-6,0,0,name)
 
 tfm.exec.chatMessage("<rose>"..name.."</rose> attack "..o..". Healt: "..can[o].cana)
-ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,o,10,20,n,30,0x000000,0x000001,500,true)
+
 
 end
 end
@@ -264,8 +286,10 @@ if xU < ara and yU < ara and o ~= name then
 if takim[o].takima==1 then
 can[o].cana=can[o].cana-1
 
+tfm.exec.removeImage(kalp2[o])
+
 tfm.exec.chatMessage("<rose>"..name.."</rose> attack "..o..". Healt: "..can[o].cana)
-ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,o,10,20,n,30,0x000000,0x000001,500,true)
+
 end
 end
 end
@@ -367,6 +391,10 @@ tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>
 end
 end
 
+if can[name].cana==1 then
+tfm.exec.removeImage(kalp2[name])
+end
+
 
 if takim[name].takima==2 then
 if pythag( 2950, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
@@ -427,7 +455,7 @@ if can[name].cana==0 then
 tfm.exec.killPlayer(name)
 tfm.exec.chatMessage(name.." is Dead.")
 can[name].cana=2
-ui.addTextArea(0,"<font size='15' color='#0076FF'> Health: "..can[name].cana,name,10,20,n,30,0x000000,0x000001,500,true)
+
 end
 
 if yetenek[name].esure>0 then
@@ -466,11 +494,13 @@ end
 end
 
 function eventPlayerDied(name)
+
+
 can[name].cana=2
 tfm.exec.respawnPlayer(name)
 yetenek[name].fx=-500
 yetenek[name].fy=-900
-ui.addTextArea(0,"<font size='15' color='#0076FF'> Health: "..can[name].cana,name,10,20,n,30,0x000000,0x000001,500,true)
+
 if basadon==0 then
 if takim[name].takima==1 then
 tfm.exec.movePlayer(name,2980,770)
@@ -481,7 +511,12 @@ tfm.exec.movePlayer(name,20,770)
 tfm.exec.setNameColor(name,0xCDCE20)
 end
 end
+kalp1[name] = tfm.exec.addImage(health1,"$"..name,-21,-35)
+kalp2[name] = tfm.exec.addImage(health2,"$"..name,-20,-34)
+
 end
+
+
 
 function eventChatCommand(name,message)
 if message=="help" then
