@@ -410,8 +410,10 @@ tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..
 end
 end
 
+if can[name].canadan==1 then
 if can[name].cana==1 then
 tfm.exec.removeImage(kalp2[name])
+can[name].canadan=can[name].canadan-1
 end
 
 
@@ -469,13 +471,11 @@ end
 end
 
 
-if can[name].canadan==1 then
+
 if can[name].cana==0 then
 tfm.exec.killPlayer(name)
 tfm.exec.chatMessage(name.." is Dead.")
 can[name].cana=2
-can[name].canadan=can[name].canadan-1
-end
 end
 
 if yetenek[name].esure>0 then
