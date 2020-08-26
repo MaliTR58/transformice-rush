@@ -289,7 +289,7 @@ if takim[name].takima==2 then
 if xU < ara and yU < ara and o ~= name then
 if takim[o].takima==1 then
 can[o].cana=can[o].cana-1
-can[o].canadan=can[o].canadan1+1
+can[o].canadan=can[o].canadan+1
 
 tfm.exec.removeImage(kalp2[o])
 
