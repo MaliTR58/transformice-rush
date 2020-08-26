@@ -415,6 +415,7 @@ if can[name].cana==1 then
 tfm.exec.removeImage(kalp2[name])
 can[name].canadan=can[name].canadan-1
 end
+end
 
 
 if takim[name].takima==2 then
