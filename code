@@ -192,7 +192,7 @@ kalp2[name] = tfm.exec.addImage(health2,"$"..name,-20,-34)
 zipla[name]={ziplaa=0,ziplamaa=0} --Jump times variable
 takim[name]={takima=0} --İs team variable
 yetenek[name]={q=0,e=0,f=0,esure=0,fx=0,fy=0} --Abilities Q E F variable
-can[name]={cana=2} -- Health variable
+can[name]={cana=2,canadan=0} -- Health variable
 win[name]={wina=0} -- Winsvariable
 ui.addTextArea(1,"<font size='25' color='#0076FF'> Q",name,10,360,40,35,0x000000,0x000001,500,true)
 ui.addTextArea(2,"<font size='25' color='#0076FF'> E",name,60,370,40,30,0x000000,0x000001,500,true)
@@ -272,6 +272,7 @@ if xU < ara and yU < ara and o ~= name then
 if takim[o].takima==2 then
 
 can[o].cana=can[o].cana-1
+can[o].canadan=can[o].canadan1+1
 
 tfm.exec.displayParticle(5,tfm.get.room.playerList[o].x,tfm.get.room.playerList[o].y,0,-6,0,0,name)
 
@@ -285,6 +286,7 @@ if takim[name].takima==2 then
 if xU < ara and yU < ara and o ~= name then
 if takim[o].takima==1 then
 can[o].cana=can[o].cana-1
+can[o].canadan=can[o].canadan1+1
 
 tfm.exec.removeImage(kalp2[o])
 
@@ -450,12 +452,13 @@ end
 end
 
 
-
+if can[name].canadan==1 then
 if can[name].cana==0 then
 tfm.exec.killPlayer(name)
 tfm.exec.chatMessage(name.." is Dead.")
 can[name].cana=2
-
+can[name].canadan=can[name].canadan-1
+end
 end
 
 if yetenek[name].esure>0 then
