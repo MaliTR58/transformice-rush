@@ -47,7 +47,6 @@ if mapsira==7 then
 tfm.exec.newGame(6)
 end
 
-print("Map ID: "..mapsira)
 mapsira={}
 tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puank.."</j>-<rose>"..puans.."",nil,53,30,700,nil,0,1,0,true)
 end
@@ -168,18 +167,15 @@ tfm.exec.chatMessage("<t>------------------------------",name)
 tfm.exec.chatMessage("<J><n>"..lang[name].dlbaslangic,name)
 tfm.exec.chatMessage("<t>------------------------------",name)
 
---ui.addTextArea(62,"",name,0,0,800,400,0x000000,0x000001,500,true)
---ui.addTextArea(63,"<font size='30' color='#FF8595'><a href='event:tr'>TR",name,200,150,n,n,0x000000,0x000001,500,true)
---ui.addTextArea(64,"<font size='30' color='#FF8595'><a href='event:en'>EN",name,600,150,n,n,0x000000,0x000001,500,true)
 
 tfm.exec.killPlayer(name)
 tfm.exec.respawnPlayer(name)
 
-zipla[name]={ziplaa=0,ziplamaa=0}
-takim[name]={takima=0}
-yetenek[name]={q=0,e=0,f=0,esure=0,fx=0,fy=0}
-can[name]={cana=2}
-win[name]={wina=0}
+zipla[name]={ziplaa=0,ziplamaa=0} --Jump times variable
+takim[name]={takima=0} --İs team variable
+yetenek[name]={q=0,e=0,f=0,esure=0,fx=0,fy=0} --Abilities Q E F variable
+can[name]={cana=2} -- Health variable
+win[name]={wina=0} -- Winsvariable
 ui.addTextArea(1,"<font size='25' color='#0076FF'> Q",name,10,360,40,35,0x000000,0x000001,500,true)
 ui.addTextArea(2,"<font size='25' color='#0076FF'> E",name,60,370,40,30,0x000000,0x000001,500,true)
 ui.addTextArea(3,"<font size='25' color='#0076FF'> F",name,110,370,50,30,0x000000,0x000001,500,true)
@@ -225,7 +221,7 @@ end
 function eventKeyboard(name, key, down, x, y)
 
 if basadon==0 then
-if key == 81 then
+if key == 81 then -- Ability is Q
 if yetenek[name].q==0 then
 
 
@@ -279,7 +275,7 @@ yetenek[name].q=10
 end
 end
 
-if key == 69 then
+if key == 69 then -- Ability is E
 if yetenek[name].e==0 then
 ui.addTextArea(30,"",name,tfm.get.room.playerList[name].x-35,tfm.get.room.playerList[name].y-35,70,70,0x7BD6DA,0x7BD6DA,0.2)
 for o, data in pairs(tfm.get.room.playerList) do
@@ -306,7 +302,7 @@ end
 end
 
 
-if key == 70 then
+if key == 70 then -- Ability is F
 if yetenek[name].f==0 then
 if down then
 yetenek[name].fx=x
@@ -326,7 +322,6 @@ if down then
 zipla[name].ziplaa=1
 else
 tfm.exec.movePlayer(name,0,0,true,0,zipla[name].ziplamaa,false)
-print(zipla[name].ziplamaa)
 zipla[name].ziplaa=0
 zipla[name].ziplamaa=0
 end
@@ -343,7 +338,7 @@ if basadon>0 then
 basadon=basadon-1
 end
 
-if basadon==1 then
+if basadon==1 then --Restart game
 maps()
 for name,player in pairs(tfm.get.room.playerList) do
 tfm.exec.killPlayer(name)
@@ -353,9 +348,8 @@ eventNewPlayer(name)
 end
 end
 for name,player in pairs(tfm.get.room.playerList) do
-if zipla[name].ziplaa==1 then
+if zipla[name].ziplaa==1 then ---Jump
 if zipla[name].ziplamaa>=-120 then
-print("sss")
 zipla[name].ziplamaa=zipla[name].ziplamaa-40
 end
 end
@@ -366,7 +360,7 @@ if pythag( 20, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name
 tfm.exec.killPlayer(name)
 
 puank=puank+1
-tfm.exec.chatMessage("<j>"..name.." Sayesinde <rose>KIRMIZI</rose> takım 1 Puan kazandı ve Puanları:"..puank)
+tfm.exec.chatMessage("<n>"..name.." thanks to her. <rose>Red</rose>The red team scored 1 point. Point is:"..puank)
 tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
 
 end
@@ -377,7 +371,7 @@ if takim[name].takima==2 then
 if pythag( 2950, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
 tfm.exec.killPlayer(name)
 puans=puans+1
-tfm.exec.chatMessage("<j>"..name.." Sayesinde <J>SARI</rose> takım 1 Puan kazandı ve Puanları:"..puans)
+tfm.exec.chatMessage("<n>"..name.." thanks to her. <J>Yellow</rose>The yellow team scored 1 point. Point is:"..puans)
 tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
 end
 end
@@ -386,13 +380,13 @@ end
 if puank==3 then
 mapsira=math.random(1,5)
 
-tfm.exec.chatMessage("<j>"..name.." Sayesinde <rose>KIRMIZI</rose> takım kazandı.")
+tfm.exec.chatMessage("<n>"..name.." thanks to her. <rose>Red</rose> team is win.")
 
 win[name].wina=win[name].wina+1
 
 basadon=20
 tfm.exec.killPlayer(name)
-
+-----------------waiting maps
 tfm.exec.newGame([[<C><P F="0" /><Z><S><S L="400" X="200" H="100" Y="355" T="17" P="0,0,0.3,0.2,0,0,0,0" /><S L="400" X="600" H="100" Y="355" T="18" P="0,0,0.3,0.2,0,0,0,0" /></S><D /><O /></Z></C>]])
 
 for name,player in pairs(tfm.get.room.playerList) do
@@ -408,7 +402,7 @@ end
 
 ---2
 if puans==3 then
-tfm.exec.chatMessage("<rose>"..name.." Sayesinde <j>SARI</j> takım kazandı.")
+tfm.exec.chatMessage("<n>"..name.." thanks to her. <j>Yellow</j> team is win.")
 mapsira=math.random(1,5)
 win[name].wina=win[name].wina+1
 tfm.exec.killPlayer(name)
@@ -437,7 +431,6 @@ end
 
 if yetenek[name].esure>0 then
 yetenek[name].esure=yetenek[name].esure-1
-print(yetenek[name].esure)
 end
 if yetenek[name].esure==1 then
 tfm.exec.freezePlayer(name,false)
@@ -489,26 +482,19 @@ end
 end
 end
 
-function eventTextAreaCallback(id, name, callback)
-if callback=="tr" then
-ui.addTextArea(61,"<p align='center'><font size='15' color='#FF8595'>Selam fareler, yeni minioyun un test odasına hoşgeldiniz.</font><br><br> <font size='14'><b>Q yeteneği:<br></b> Bastığınız zaman sizin yarıçapınızdaki küçük bir alanda olan farelerin 2 canından 1 tanesini alıyor ve eğer o farenin hiç canı kalmamışsa Ölüyor :) <br><br><b>E Yeteneği:</b><br> Etrafınızdaki fareleri kısa bir süreliğine dondurmanızı yarıyor <br><br><b>F yeteneği:<br></b> sizleri bir ninja gibi görünmez hale getiriyor F tuşuna basılı tuttuğunuz sürece gizemli kalmaya devam edebilirsiniz ;)<br><br> <b>Ve en önemli yeteneklerden birisi S ve Aşağı Tuşu:</b><br> ne kadar uzun süre absarsanız sizi bi o kadar havaya savuran bir yetenek.<br><b><br> KARŞI TARAFIN DOĞDUĞU YERE İLK GİDEN TAKIM KAZANIR<br> BOL ŞANS",name,100,40,600,300,0x000000,0x000001,500,true)
-ui.addTextArea(16,"<font size='30' color='#FF8595'><a href='event:helpkapat'>Okudum ve oynamaya Hazırım (Tıka)",name,110,350,n,n,0x000000,0x000000,500,true)
-ui.removeTextArea(62,name)
-ui.removeTextArea(64,name)
-ui.removeTextArea(63,name)
-end
-if callback=="en" then
-ui.addTextArea(61,"<p align='center'><font size='15' color='#FF8595'>Hello mices, Welcome to test of new minigame.</font><br><br> <font size='14'><b>Q Skill:<br></b> When you press Q, mice near to you get one heart damage. If mice have 1 heart, it dies. <br><br><b>E Skill:</b><br> When you press E, mice near to you freeze for a few seconds. <br><br><b>F Skill:<br></b> Makes you invisible like a ninja! If you hold F key it makes you invisible.<br><br> <b>And one of the most important skill is the S and Down Key:</b><br> the longer you hold it, the more it flies you up.<br><b><br> The first mice to enter enemy spawn area wins!<br>",name,100,40,600,300,0x000000,0x000001,500,true)
-ui.addTextArea(16,"<font size='23' color='#FF8595'><a href='event:helpkapat'>I read all of the information and I'm ready to play! (Click)",name,100,315,n,n,0x000000,0x000000,500,true)
-ui.removeTextArea(62,name)
-ui.removeTextArea(64,name)
-ui.removeTextArea(63,name)
-end
-if callback=="helpkapat" then
-ui.removeTextArea(61,name)
-ui.removeTextArea(16,name)
+function eventChatCommand(name,message)
+if message=="help" then
+tfm.exec.chatMessage("<t>---------"..lang[name].dlytnk.."-----------",name)
+tfm.exec.chatMessage("<rose>Q:</rose> <n>"..lang[name].dlq,name)
+tfm.exec.chatMessage("<J>E:</j> <n>"..lang[name].dle,name)
+tfm.exec.chatMessage("<rose>F:</rose> <n>"..lang[name].dlf,name)
+tfm.exec.chatMessage("<J>S "..lang[name].dls,name)
+tfm.exec.chatMessage("<t>------------------------------",name)
+tfm.exec.chatMessage("<J><n>"..lang[name].dlbaslangic,name)
+tfm.exec.chatMessage("<t>------------------------------",name)
 end
 end
+
 
 
 
