@@ -51,7 +51,7 @@ tfm.exec.newGame(6)
 end
 
 mapsira={}
-tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puank.."</j>-<rose>"..puans.."",nil,53,30,700,nil,0,1,0,true)
+tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puank.."</j>-<rose>"..puans.."",nil,53,30,700,nil,0,1,0,true)
 end
 maps()
 
@@ -76,12 +76,15 @@ win={}
 kalp1={}
 kalp2={}
 
+egilmeresmi={}
 
-
+resim1 = "1742cd2903b.png"
+resim2 = "1742cd2ab4d.png"
+resim3 = "1742cd2c2e3.png"
 
 
 function eventNewPlayer(name)
-
+egilmeresmi = tfm.exec.addImage(resim1, ":1", 739, 342, name)
 
 
 if tfm.get.room.playerList[name].community=="tr" or tfm.get.room.playerList[name].community=="en" or tfm.get.room.playerList[name].community=="pl" or tfm.get.room.playerList[name].community=="es" or tfm.get.room.playerList[name].community=="br" or tfm.get.room.playerList[name].community=="fr" then
@@ -381,6 +384,19 @@ zipla[name].ziplamaa=zipla[name].ziplamaa-40
 end
 end
 
+if zipla[name].ziplamaa==-80 then
+
+egilmeresmi = tfm.exec.addImage(resim2, ":1", 739, 342, name)
+
+end
+
+if zipla[name].ziplamaa==-120 then
+
+egilmeresmi = tfm.exec.addImage(resim3, ":1", 739, 342, name)
+
+end
+
+
 
 if takim[name].takima==1 then
 if pythag( 20, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
@@ -388,7 +404,7 @@ tfm.exec.killPlayer(name)
 
 puank=puank+1
 tfm.exec.chatMessage("<n>"..name.." thanks to her. <rose>Red</rose> The red team scored 1 point. Point is:"..puank)
-tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
+tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
 
 end
 end
@@ -403,7 +419,7 @@ if pythag( 2950, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[na
 tfm.exec.killPlayer(name)
 puans=puans+1
 tfm.exec.chatMessage("<n>"..name.." thanks to her. <J>Yellow</J> The yellow team scored 1 point. Point is:"..puans)
-tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
+tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
 end
 end
 
