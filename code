@@ -221,6 +221,7 @@ end
 function eventKeyboard(name, key, down, x, y)
 
 if basadon==0 then
+if tfm.get.room.playerList[name].y>0 then
 if key == 81 then -- Ability is Q
 if yetenek[name].q==0 then
 
@@ -248,25 +249,23 @@ local xU, yU = math.abs(x - data.x), math.abs(y - data.y)
 if takim[name].takima==1 then
 if xU < ara and yU < ara and o ~= name then
 if takim[o].takima==2 then
-if tfm.get.room.playerList[name].y>0 then
+
 can[o].cana=can[o].cana-1
 tfm.exec.displayParticle(5,tfm.get.room.playerList[o].x,tfm.get.room.playerList[o].y,0,-6,0,0,name)
 
 tfm.exec.chatMessage("<rose>"..name.."</rose> attack "..o..". Healt: "..can[o].cana)
 ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,o,10,20,n,30,0x000000,0x000001,500,true)
-end
+
 end
 end
 end
 if takim[name].takima==2 then
 if xU < ara and yU < ara and o ~= name then
 if takim[o].takima==1 then
-if tfm.get.room.playerList[name].y>0 then
 can[o].cana=can[o].cana-1
 
 tfm.exec.chatMessage("<rose>"..name.."</rose> attack "..o..". Healt: "..can[o].cana)
 ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,o,10,20,n,30,0x000000,0x000001,500,true)
-end
 end
 end
 end
@@ -274,7 +273,9 @@ end
 yetenek[name].q=10
 end
 end
+end
 
+if tfm.get.room.playerList[name].y>0 then
 if key == 69 then -- Ability is E
 if yetenek[name].e==0 then
 ui.addTextArea(30,"",name,tfm.get.room.playerList[name].x-35,tfm.get.room.playerList[name].y-35,70,70,0x7BD6DA,0x7BD6DA,0.2)
@@ -300,7 +301,7 @@ end
 yetenek[name].e=7
 end
 end
-
+end
 
 if key == 70 then -- Ability is F
 if yetenek[name].f==0 then
