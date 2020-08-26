@@ -1,6 +1,4 @@
 ----------Code By: Muco#2311 -------
-
-
 for _, v in next, {'AutoTimeLeft', 'AutoShaman', 'AutoNewGame', 'AutoScore', 'AfkDeath', 'PhysicalConsumables'} do
 	tfm.exec['disable' .. v]()
 end
@@ -161,27 +159,6 @@ dlytnk="Abilities:",
 end
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 tfm.exec.chatMessage("<t>---------"..lang[name].dlytnk.."-----------",name)
 tfm.exec.chatMessage("<rose>Q:</rose> <n>"..lang[name].dlq,name)
 tfm.exec.chatMessage("<J>E:</j> <n>"..lang[name].dle,name)
@@ -275,19 +252,25 @@ local xU, yU = math.abs(x - data.x), math.abs(y - data.y)
 if takim[name].takima==1 then
 if xU < ara and yU < ara and o ~= name then
 if takim[o].takima==2 then
+if tfm.get.room.playerList[name].y>0 then
 can[o].cana=can[o].cana-1
 tfm.exec.displayParticle(5,tfm.get.room.playerList[o].x,tfm.get.room.playerList[o].y,0,-6,0,0,name)
-ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,o,10,20,n,30,0x000000,0x000001,500,true)
+
 tfm.exec.chatMessage("<rose>"..name.."</rose> attack "..o..". Healt: "..can[o].cana)
+ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,o,10,20,n,30,0x000000,0x000001,500,true)
+end
 end
 end
 end
 if takim[name].takima==2 then
 if xU < ara and yU < ara and o ~= name then
 if takim[o].takima==1 then
+if tfm.get.room.playerList[name].y>0 then
 can[o].cana=can[o].cana-1
-ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,o,10,20,n,30,0x000000,0x000001,500,true)
+
 tfm.exec.chatMessage("<rose>"..name.."</rose> attack "..o..". Healt: "..can[o].cana)
+ui.addTextArea(0,"<font size='15' color='#0076FF'> Healt: "..can[name].cana,o,10,20,n,30,0x000000,0x000001,500,true)
+end
 end
 end
 end
@@ -378,10 +361,6 @@ end
 end
 
 
-
-
-
-
 if takim[name].takima==1 then
 if pythag( 20, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
 tfm.exec.killPlayer(name)
@@ -394,13 +373,6 @@ end
 end
 
 
-
-
-
-
-
-
-
 if takim[name].takima==2 then
 if pythag( 2950, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
 tfm.exec.killPlayer(name)
@@ -409,10 +381,6 @@ tfm.exec.chatMessage("<j>"..name.." Sayesinde <J>SARI</rose> takım 1 Puan kazan
 tfm.exec.setUIMapName("<B><J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
 end
 end
-
-
-
-
 
 ---1
 if puank==3 then
@@ -457,14 +425,6 @@ puans=0
 puank=0
 end
 end
-
-
-
-
-
-
-
-
 
 
 
@@ -549,28 +509,6 @@ ui.removeTextArea(61,name)
 ui.removeTextArea(16,name)
 end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
