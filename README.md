@@ -13,7 +13,7 @@ Key F: As long as you hold it down it hides you like a ninja.
 
 S or Down key: The longer you press, the higher it jumps.
 
-Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!
+Go to the spawn of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!
 
 
 My English A little bad, I explained fast Sorry :(
