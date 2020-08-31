@@ -585,9 +585,6 @@ tfm.exec.chatMessage("<t>------------------------------",name)
 tfm.exec.chatMessage("<J><n>"..lang[name].dlbaslangic,name)
 tfm.exec.chatMessage("<t>------------------------------",name)
 end
-if message=="move" then
-tfm.exec.movePlayer(name,20,770)
-end
 end
 
 function eventTextAreaCallback(id, name, callback)
