@@ -18,8 +18,6 @@ maps={
 tfm.exec.newGame(maps[math.random(#maps)])
 tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puank.."</j>-<rose>"..puans.."",nil,53,30,700,nil,0,1,0,true)
 
-
-
 function pythag(x1,y1,x2,y2,r)
 local x=x2-x1
 local y=y2-y1
@@ -34,7 +32,7 @@ team=0
 yetenek={}
 can={}
 win={}
-
+totals={}
 
 
 kalp1={}
@@ -140,24 +138,34 @@ end
 
 tfm.exec.chatMessage("<n>Please type <j>!help</j> for help.</n>",name)
 
-
-
-tfm.exec.killPlayer(name)
-tfm.exec.respawnPlayer(name)
-tfm.exec.removeImage(kalp1[name])
-tfm.exec.removeImage(kalp2[name])
-kalp1[name] = tfm.exec.addImage(health1,"$"..name,-21,-35)
-kalp2[name] = tfm.exec.addImage(health2,"$"..name,-20,-34)
-
+ui.addTextArea(81, "<p align='center'><a href='event:close'>CLOSE", name, 373.5, 337, 50, 20,0x000000,0x000001,500,true)
+ui.addTextArea(82, "<p align='center'><a href='event:close'><br><b><font size='15' color='#FD0065'>Abilities</font></b><br><br><b><font size='15' color='#0076FF'>Q</font></b> When used, it causes damage to the opponent.<br><br><b><font size='15' color='#0076FF'>E</font>:</b> You freeze your opponent.<br><br><b><font size='15' color='#0076FF'>F</font>:</b> It hides you like a ninja.<br><br>^<br>Remember, these are keyboard keys.<br><br>Go to the spawn of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!<br><br>Coder: Muco#2311 <br>Host: Bodykudo#0000", name, 200, 76, 400, 250,0x000000,0x000001,500,true)
 
 zipla[name]={ziplaa=0,ziplamaa=0} --Jump times variable
 takim[name]={takima=0} --İs team variable
 yetenek[name]={q=0,e=0,f=0,esure=0,fx=0,fy=0} --Abilities Q E F variable
 can[name]={cana=2,canadan=0} -- Health variable
 win[name]={wina=0} -- Winsvariable
+totals[name]={kill=0,death=0,damage=0,occupy=0,kd=0}
+
+tfm.exec.killPlayer(name)
+tfm.exec.respawnPlayer(name)
+
+
+
+tfm.exec.removeImage(kalp1[name])
+tfm.exec.removeImage(kalp2[name])
+kalp1[name] = tfm.exec.addImage(health1,"$"..name,-21,-35)
+kalp2[name] = tfm.exec.addImage(health2,"$"..name,-20,-34)
+
+
+
+
 ui.addTextArea(1,"<font size='25' color='#0076FF'> Q",name,10,360,40,35,0x000000,0x000001,500,true)
 ui.addTextArea(2,"<font size='25' color='#0076FF'> E",name,60,370,40,30,0x000000,0x000001,500,true)
 ui.addTextArea(3,"<font size='25' color='#0076FF'> F",name,110,370,50,30,0x000000,0x000001,500,true)
+
+
 
 if team==0 then
 tfm.exec.movePlayer(name,2970,770)
@@ -198,6 +206,7 @@ end
 
 for name,player in pairs(tfm.get.room.playerList) do
 eventNewPlayer(name)
+totals[name].death=totals[name].death-1
 end
 
 function eventKeyboard(name, key, down, x, y)
@@ -235,6 +244,14 @@ if takim[o].takima==2 then
 can[o].cana=can[o].cana-1
 can[o].canadan=can[o].canadan+1
 
+if can[o].cana==1 then
+totals[name].damage=totals[name].damage+1
+end
+
+if can[o].cana==0 then
+totals[name].kill=totals[name].kill+1
+end
+
 tfm.exec.displayParticle(5,tfm.get.room.playerList[o].x,tfm.get.room.playerList[o].y,0,-6,0,0,name)
 
 tfm.exec.chatMessage("<rose>"..name.."</rose> attack "..o..". Healt: "..can[o].cana)
@@ -248,6 +265,14 @@ if xU < ara and yU < ara and o ~= name then
 if takim[o].takima==1 then
 can[o].cana=can[o].cana-1
 can[o].canadan=can[o].canadan+1
+
+if can[o].cana==1 then
+totals[name].damage=totals[name].damage+1
+end
+
+if can[o].cana==0 then
+totals[name].kill=totals[name].kill+1
+end
 
 tfm.exec.removeImage(kalp2[o])
 
@@ -321,6 +346,15 @@ end
 
 
 function eventLoop()
+for name,player in pairs(tfm.get.room.playerList) do
+ui.addTextArea(0, "Kill:"..totals[name].kill.."<br>Death:"..totals[name].death.."<br>Damage:"..totals[name].damage.."<br>Occupy:"..totals[name].occupy.."<br>K/D:"..totals[name].kd,name,695, 40, 100, 77,0x000000,0x000001,0.1,true)
+if totals[name].kill>0 and totals[name].death>0 then
+totals[name].kd=totals[name].kill/totals[name].death
+else
+totals[name].kd=0
+end
+end
+
 
 if basadon>0 then
 
@@ -332,9 +366,20 @@ tfm.exec.newGame(maps[math.random(#maps)])
 tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puank.."</j>-<rose>"..puans.."",nil,53,30,700,nil,0,1,0,true)
 for name,player in pairs(tfm.get.room.playerList) do
 tfm.exec.killPlayer(name)
+totals[name].death=totals[name].death-1
 end
 for name,player in pairs(tfm.get.room.playerList) do
+totalso={}
+totalso[name]={kill=0,death=0,damage=0,occupy=0}
+totalso[name].kill=totals[name].kill
+totalso[name].death=totals[name].death
+totalso[name].damage=totals[name].damage
+totalso[name].occupy=totals[name].occupy
 eventNewPlayer(name)
+totals[name].kill=totalso[name].kill
+totals[name].death=totalso[name].death
+totals[name].damage=totalso[name].damage
+totals[name].occupy=totalso[name].occupy
 end
 end
 for name,player in pairs(tfm.get.room.playerList) do
@@ -361,7 +406,8 @@ end
 if takim[name].takima==1 then
 if pythag( 20, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
 tfm.exec.killPlayer(name)
-
+totals[name].death=totals[name].death-1
+totals[name].occupy=totals[name].occupy+1
 puank=puank+1
 tfm.exec.chatMessage("<n>"..name.." thanks to her. <rose>Red</rose> The red team scored 1 point. Point is:"..puank)
 tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
@@ -379,6 +425,8 @@ end
 if takim[name].takima==2 then
 if pythag( 2950, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
 tfm.exec.killPlayer(name)
+totals[name].death=totals[name].death-1
+totals[name].occupy=totals[name].occupy+1
 puans=puans+1
 tfm.exec.chatMessage("<n>"..name.." thanks to her. <J>Yellow</J> The yellow team scored 1 point. Point is:"..puans)
 tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..puank.."",nil,53,30,700,nil,0,1,0,true)
@@ -389,53 +437,80 @@ end
 if puank==3 then
 mapsira=math.random(1,5)
 
-tfm.exec.chatMessage("<n>"..name.." thanks to her. <rose>Red</rose> team is win.")
+
 
 win[name].wina=win[name].wina+1
 
 basadon=20
 tfm.exec.killPlayer(name)
+totals[name].death=totals[name].death-1
 -----------------waiting maps
 tfm.exec.newGame([[<C><P F="0" /><Z><S><S L="400" X="200" H="100" Y="355" T="17" P="0,0,0.3,0.2,0,0,0,0" /><S L="400" X="600" H="100" Y="355" T="18" P="0,0,0.3,0.2,0,0,0,0" /></S><D /><O /></Z></C>]])
 
 for name,player in pairs(tfm.get.room.playerList) do
+totalso={}
+totalso[name]={kill=0,death=0,damage=0,occupy=0}
+totalso[name].kill=totals[name].kill
+totalso[name].death=totals[name].death
+totalso[name].damage=totals[name].damage
+totalso[name].occupy=totals[name].occupy
 eventNewPlayer(name)
+totals[name].kill=totalso[name].kill
+totals[name].death=totalso[name].death
+totals[name].damage=totalso[name].damage
+totals[name].occupy=totalso[name].occupy
+
 tfm.exec.movePlayer(name,400,200)
 ui.removeTextArea(62,name)
 ui.removeTextArea(64,name)
 ui.removeTextArea(63,name)
 puans=0
 puank=0
+tfm.exec.chatMessage("<n>"..name.." thanks to her. <rose>Red</rose> team is win.")
 end
+
 end
 
 ---2
 if puans==3 then
-tfm.exec.chatMessage("<n>"..name.." thanks to her. <j>Yellow</j> team is win.")
+
 mapsira=math.random(1,5)
 win[name].wina=win[name].wina+1
 tfm.exec.killPlayer(name)
+totals[name].death=totals[name].death-1
 basadon=20
 tfm.exec.killPlayer(name)
+totals[name].death=totals[name].death-1
 tfm.exec.newGame([[<C><P F="0" /><Z><S><S L="400" X="200" H="100" Y="355" T="17" P="0,0,0.3,0.2,0,0,0,0" /><S L="400" X="600" H="100" Y="355" T="18" P="0,0,0.3,0.2,0,0,0,0" /></S><D /><O /></Z></C>]])
 for name,player in pairs(tfm.get.room.playerList) do
+totalso={}
+totalso[name]={kill=0,death=0,damage=0,occupy=0}
+totalso[name].kill=totals[name].kill
+totalso[name].death=totals[name].death
+totalso[name].damage=totals[name].damage
+totalso[name].occupy=totals[name].occupy
 eventNewPlayer(name)
+totals[name].kill=totalso[name].kill
+totals[name].death=totalso[name].death
+totals[name].damage=totalso[name].damage
+totals[name].occupy=totalso[name].occupy
+
+
 tfm.exec.movePlayer(name,400,200)
 ui.removeTextArea(62,name)
 ui.removeTextArea(64,name)
 ui.removeTextArea(63,name)
 puans=0
 puank=0
+tfm.exec.chatMessage("<n>"..name.." thanks to her. <j>Yellow</j> team is win.")
 end
 end
-
 
 
 if can[name].cana==0 then
 tfm.exec.killPlayer(name)
 tfm.exec.chatMessage(name.." is Dead.")
 can[name].cana=2
-
 end
 
 
@@ -476,7 +551,7 @@ end
 
 function eventPlayerDied(name)
 
-
+totals[name].death=totals[name].death+1
 can[name].cana=2
 tfm.exec.respawnPlayer(name)
 yetenek[name].fx=-500
@@ -510,8 +585,14 @@ tfm.exec.chatMessage("<t>------------------------------",name)
 tfm.exec.chatMessage("<J><n>"..lang[name].dlbaslangic,name)
 tfm.exec.chatMessage("<t>------------------------------",name)
 end
+if message=="move" then
+tfm.exec.movePlayer(name,20,770)
+end
 end
 
-
-
-
+function eventTextAreaCallback(id, name, callback)
+if callback=="close" then
+ui.removeTextArea(81,name)
+ui.removeTextArea(82,name)
+end
+end
