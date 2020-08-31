@@ -347,7 +347,7 @@ end
 
 function eventLoop()
 for name,player in pairs(tfm.get.room.playerList) do
-ui.addTextArea(0, "Kill:"..totals[name].kill.."<br>Death:"..totals[name].death.."<br>Damage:"..totals[name].damage.."<br>Occupy:"..totals[name].occupy.."<br>K/D:"..totals[name].kd,name,695, 40, 100, 77,0x000000,0x000001,0.1,true)
+ui.addTextArea(0, "Kill:"..totals[name].kill.."<br>Death:"..totals[name].death.."<br>Damage:"..totals[name].damage.."<br>Occupy:"..totals[name].occupy.."<br>K/D:"..totals[name].kd,name,695, 40, 100, 77,0x000000,0x000001,0.3,true)
 if totals[name].kill>0 and totals[name].death>0 then
 totals[name].kd=totals[name].kill/totals[name].death
 else
@@ -390,13 +390,13 @@ end
 end
 
 if zipla[name].ziplamaa==-80 then
-
+tfm.exec.removeImage(egilmeresmi)
 egilmeresmi = tfm.exec.addImage(resim2, ":1", 739, 342, name)
 
 end
 
 if zipla[name].ziplamaa==-120 then
-
+tfm.exec.removeImage(egilmeresmi)
 egilmeresmi = tfm.exec.addImage(resim3, ":1", 739, 342, name)
 
 end
