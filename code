@@ -50,7 +50,7 @@ puank=0
 end
 
 function eventNewPlayer(name)
-egilmeresmi = tfm.exec.addImage(resim1, ":1", 739, 342, name)
+egilmeresmi[name] = tfm.exec.addImage(resim1, ":1", 739, 342, name)
 
 
 if tfm.get.room.playerList[name].community=="tr" or tfm.get.room.playerList[name].community=="en" or tfm.get.room.playerList[name].community=="pl" or tfm.get.room.playerList[name].community=="es" or tfm.get.room.playerList[name].community=="br" or tfm.get.room.playerList[name].community=="fr" then
@@ -341,7 +341,8 @@ else
 tfm.exec.movePlayer(name,0,0,true,0,zipla[name].ziplamaa,false)
 zipla[name].ziplaa=0
 zipla[name].ziplamaa=0
-egilmeresmi = tfm.exec.addImage(resim1, ":1", 739, 342, name)
+if egilmeresmi[name] then tfm.exec.removeImage(egilmeresmi[name],name) egilmeresmi[name]=nil end
+egilmeresmi[name] = tfm.exec.addImage(resim1, ":1", 739, 342, name)
 end
 end
 end
@@ -395,15 +396,13 @@ end
 end
 
 if zipla[name].ziplamaa==-80 then
-for name,player in pairs(tfm.get.room.playerList) do
-egilmeresmi = tfm.exec.addImage(resim2, ":1", 739, 342, name)
-end
+if egilmeresmi[name] then tfm.exec.removeImage(egilmeresmi[name],name) egilmeresmi[name]=nil end
+egilmeresmi[name] = tfm.exec.addImage(resim2, ":1", 739, 342, name)
 end
 
 if zipla[name].ziplamaa==-120 then
-for name,player in pairs(tfm.get.room.playerList) do
-egilmeresmi = tfm.exec.addImage(resim3, ":1", 739, 342, name)
-end
+if egilmeresmi[name] then tfm.exec.removeImage(egilmeresmi[name],name) egilmeresmi[name]=nil end
+egilmeresmi[name] = tfm.exec.addImage(resim3, ":1", 739, 342, name)
 end
 
 
@@ -475,7 +474,7 @@ ui.removeTextArea(64,name)
 ui.removeTextArea(63,name)
 puans=0
 puank=0
-tfm.exec.chatMessage("<n>"..name.." thanks to her. <rose>Red</rose> team is win.")
+tfm.exec.chatMessage("<n>Thanks to her. <rose>Red</rose> team is win.")
 end
 
 end
@@ -514,7 +513,7 @@ ui.removeTextArea(64,name)
 ui.removeTextArea(63,name)
 puans=0
 puank=0
-tfm.exec.chatMessage("<n>"..name.." thanks to her. <j>Yellow</j> team is win.")
+tfm.exec.chatMessage("<n>Thanks to her. <j>Yellow</j> team is win.")
 end
 end
 end
