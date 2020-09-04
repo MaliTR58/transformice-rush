@@ -402,7 +402,7 @@ egilmeresmi = tfm.exec.addImage(resim3, ":1", 739, 342, name)
 end
 
 
-
+if basadon <2 then
 if takim[name].takima==1 then
 if pythag( 20, 750,tfm.get.room.playerList[name].x, tfm.get.room.playerList[name].y, 50) then
 tfm.exec.killPlayer(name)
@@ -433,8 +433,9 @@ tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puans.."</j>-<rose>"..
 end
 end
 
-if basadon <2 then
+
 ---1
+if basadon<=0 then
 if puank==3 then
 mapsira=math.random(1,5)
 
@@ -474,12 +475,12 @@ end
 
 ---2
 if puans==3 then
-
+basadon=20
 mapsira=math.random(1,5)
 win[name].wina=win[name].wina+1
 tfm.exec.killPlayer(name)
 totals[name].death=totals[name].death-1
-basadon=20
+
 tfm.exec.killPlayer(name)
 totals[name].death=totals[name].death-1
 tfm.exec.newGame([[<C><P F="0" /><Z><S><S L="400" X="200" H="100" Y="355" T="17" P="0,0,0.3,0.2,0,0,0,0" /><S L="400" X="600" H="100" Y="355" T="18" P="0,0,0.3,0.2,0,0,0,0" /></S><D /><O /></Z></C>]])
@@ -504,6 +505,7 @@ ui.removeTextArea(63,name)
 puans=0
 puank=0
 tfm.exec.chatMessage("<n>"..name.." thanks to her. <j>Yellow</j> team is win.")
+end
 end
 end
 end
