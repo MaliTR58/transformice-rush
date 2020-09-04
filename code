@@ -390,13 +390,13 @@ end
 end
 
 if zipla[name].ziplamaa==-80 then
-tfm.exec.removeImage(egilmeresmi)
+
 egilmeresmi = tfm.exec.addImage(resim2, ":1", 739, 342, name)
 
 end
 
 if zipla[name].ziplamaa==-120 then
-tfm.exec.removeImage(egilmeresmi)
+
 egilmeresmi = tfm.exec.addImage(resim3, ":1", 739, 342, name)
 
 end
