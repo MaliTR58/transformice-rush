@@ -43,7 +43,11 @@ egilmeresmi={}
 resim1 = "1742cd2903b.png"
 resim2 = "1742cd2ab4d.png"
 resim3 = "1742cd2c2e3.png"
+function eventNewGame()
 
+puans=0
+puank=0
+end
 
 function eventNewPlayer(name)
 egilmeresmi = tfm.exec.addImage(resim1, ":1", 739, 342, name)
@@ -134,7 +138,7 @@ dlytnk="Abilities:",
 }
 
 end
-
+tfm.exec.movePlayer(name,1600,-50)
 
 tfm.exec.chatMessage("<n>Please type <j>!help</j> for help.</n>",name)
 
@@ -362,6 +366,7 @@ basadon=basadon-1
 end
 
 if basadon==1 then --Restart game
+
 tfm.exec.newGame(maps[math.random(#maps)])
 tfm.exec.setUIMapName("<J>R<t>u<ch>s<rose>h </rose> <j>"..puank.."</j>-<rose>"..puans.."",nil,53,30,700,nil,0,1,0,true)
 for name,player in pairs(tfm.get.room.playerList) do
@@ -390,15 +395,15 @@ end
 end
 
 if zipla[name].ziplamaa==-80 then
-
+for name,player in pairs(tfm.get.room.playerList) do
 egilmeresmi = tfm.exec.addImage(resim2, ":1", 739, 342, name)
-
+end
 end
 
 if zipla[name].ziplamaa==-120 then
-
+for name,player in pairs(tfm.get.room.playerList) do
 egilmeresmi = tfm.exec.addImage(resim3, ":1", 739, 342, name)
-
+end
 end
 
 
@@ -435,10 +440,12 @@ end
 
 
 ---1
-if basadon<=0 then
+
 if puank==3 then
 mapsira=math.random(1,5)
-
+for name,player in pairs(tfm.get.room.playerList) do
+takim[name].takima=0
+end
 
 
 win[name].wina=win[name].wina+1
@@ -475,6 +482,9 @@ end
 
 ---2
 if puans==3 then
+for name,player in pairs(tfm.get.room.playerList) do
+takim[name].takima=0
+end
 basadon=20
 mapsira=math.random(1,5)
 win[name].wina=win[name].wina+1
@@ -505,7 +515,6 @@ ui.removeTextArea(63,name)
 puans=0
 puank=0
 tfm.exec.chatMessage("<n>"..name.." thanks to her. <j>Yellow</j> team is win.")
-end
 end
 end
 end
@@ -556,9 +565,7 @@ function eventPlayerDied(name)
 
 totals[name].death=totals[name].death+1
 can[name].cana=2
-if basadon<2 then
 tfm.exec.respawnPlayer(name)
-end
 yetenek[name].fx=-500
 yetenek[name].fy=-900
 
