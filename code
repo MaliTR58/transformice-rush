@@ -52,7 +52,7 @@ egilmeresmi = tfm.exec.addImage(resim1, ":1", 739, 342, name)
 if tfm.get.room.playerList[name].community=="tr" or tfm.get.room.playerList[name].community=="en" or tfm.get.room.playerList[name].community=="pl" or tfm.get.room.playerList[name].community=="es" or tfm.get.room.playerList[name].community=="br" or tfm.get.room.playerList[name].community=="fr" then
 if tfm.get.room.playerList[name].community=="tr" then
 lang[name]={
-dlq="Yakındaki Farenin 2 canından 1 tanesini alır.",
+dlq="Yakındaki Farenin 1 canını alır.",
 dle="Yakındaki Fareyi kısa süreliğine dondurur.",
 dlf="Basılı tuttuğun sürece seni bir ninja gibi gizler.",
 dls="veya Eğilme tuşu:</j><n> Ne kadar uzun Süre basarsan o kadar yukarıya zıplarsın.",
@@ -63,11 +63,11 @@ dlytnk="Yetenekler",
 end
 if tfm.get.room.playerList[name].community=="en" then
 lang[name]={
-dlq="Takes 1 of 2 health of nearby Mouse",
+dlq=" When used, it causes damage to the opponent.",
 dle="Freezes nearby Mouse briefly.",
 dlf="As long as you hold it down it hides you like a ninja.",
-dls="or Down key:</j><n> The longer you press, the higher it jumps.",
-dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
+dls=" The longer you press, the higher it jumps.",
+dlbaslangic="Go to the spawn of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
 dlytnk="Abilities:",
 
 }
@@ -75,36 +75,36 @@ end
 
 if tfm.get.room.playerList[name].community=="pl" then
 lang[name]={
-dlq="Takes 1 of 2 health of nearby Mouse",
-dle="Freezes nearby Mouse briefly.",
-dlf="As long as you hold it down it hides you like a ninja.",
-dls="or Down key:</j><n> The longer you press, the higher it jumps.",
-dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
-dlytnk="Abilities:",
+dlq="Bierze 1 z 2 zdrowia pobliskiej myszy",
+dle="Zamarza na krótko w poblizu Myszynca.",
+dlf="Tak dlugo, jak go trzymasz, ukrywa cie jak ninja.",
+dls=" The longer you press, the higher it jumps.",
+dlbaslangic="Idz do miejsca narodzin druzyny przeciwnej i zarobic 1 punkt dla swojej druzyny. Druzyna, która zdobedzie 3 punkty wygrywa!",
+dlytnk="Umiejetnosci:",
 
 }
 end
 
 if tfm.get.room.playerList[name].community=="br" then
 lang[name]={
-dlq="Takes 1 of 2 health of nearby Mouse",
-dle="Freezes nearby Mouse briefly.",
-dlf="As long as you hold it down it hides you like a ninja.",
-dls="or Down key:</j><n> The longer you press, the higher it jumps.",
-dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
-dlytnk="Abilities:",
+dlq="Quando usado, causa danos ao adversário.",
+dle="Congela o rato por pouco tempo.",
+dlf="Desde que o segures, esconde-te como um ninja.",
+dls=" Quanto mais pressionas, mais alto salta.",
+dlbaslangic="Vá para o local de nascimento da equipe adversária e ganhe 1 ponto para a sua equipe. A equipa que chegar aos 3 pontos ganha!",
+dlytnk="Capacidade:",
 
 }
 end
 
 if tfm.get.room.playerList[name].community=="es" then
 lang[name]={
-dlq="Takes 1 of 2 health of nearby Mouse",
-dle="Freezes nearby Mouse briefly.",
-dlf="As long as you hold it down it hides you like a ninja.",
-dls="or Down key:</j><n> The longer you press, the higher it jumps.",
-dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
-dlytnk="Abilities:",
+dlq="Quando usado, causa danos ao adversário.",
+dle="Congela o rato por pouco tempo.",
+dlf="Desde que o segures, esconde-te como um ninja.",
+dls=" Quanto mais pressionas, mais alto salta.",
+dlbaslangic="Vá para o local de nascimento da equipe adversária e ganhe 1 ponto para a sua equipe. A equipa que chegar aos 3 pontos ganha!",
+dlytnk="Capacidade:",
 
 }
 end
@@ -114,7 +114,7 @@ lang[name]={
 dlq="Takes 1 of 2 health of nearby Mouse",
 dle="Freezes nearby Mouse briefly.",
 dlf="As long as you hold it down it hides you like a ninja.",
-dls="or Down key:</j><n> The longer you press, the higher it jumps.",
+dls=" The longer you press, the higher it jumps.",
 dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
 dlytnk="Abilities:",
 
@@ -127,7 +127,7 @@ lang[name]={
 dlq="Takes 1 of 2 health of nearby Mouse",
 dle="Freezes nearby Mouse briefly.",
 dlf="As long as you hold it down it hides you like a ninja.",
-dls="or Down key:</j><n> The longer you press, the higher it jumps.",
+dls=" The longer you press, the higher it jumps.",
 dlbaslangic="Go to the Birthplace of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!",
 dlytnk="Abilities:",
 
@@ -139,7 +139,7 @@ end
 tfm.exec.chatMessage("<n>Please type <j>!help</j> for help.</n>",name)
 
 ui.addTextArea(81, "<p align='center'><a href='event:close'>CLOSE", name, 373.5, 337, 50, 20,0x000000,0x000001,500,true)
-ui.addTextArea(82, "<p align='center'><a href='event:close'><br><b><font size='15' color='#FD0065'>Abilities</font></b><br><br><b><font size='15' color='#0076FF'>Q</font></b> When used, it causes damage to the opponent.<br><br><b><font size='15' color='#0076FF'>E</font>:</b> You freeze your opponent.<br><br><b><font size='15' color='#0076FF'>F</font>:</b> It hides you like a ninja.<br><br>^<br>Remember, these are keyboard keys.<br><br>Go to the spawn of the opposing team and earn 1 point for your team. The team that reaches 3 points wins!<br><br>Coder: Muco#2311 <br>Host: Bodykudo#0000", name, 200, 76, 400, 250,0x000000,0x000001,500,true)
+ui.addTextArea(82, "<p align='center'><a href='event:close'><br><b><font size='15' color='#FD0065'>"..lang[name].dlytnk.."</font></b><br><br><b><font size='15' color='#0076FF'>Q</font></b> "..lang[name].dlq.."</b><br><br><b><font size='15' color='#0076FF'>E</font>:</b> "..lang[name].dle.."<br><br><b><font size='15' color='#0076FF'>F</font>:</b> "..lang[name].dlf..".<br><br><font size='15' color='#0076FF'>Down Key:</font>"..lang[name].dls.."<br><br>"..lang[name].dlbaslangic.."<br><br>Coder: Muco#2311 <br>Host: Bodykudo#0000", name, 200, 76, 400, 250,0x000000,0x000001,500,true)
 
 zipla[name]={ziplaa=0,ziplamaa=0} --Jump times variable
 takim[name]={takima=0} --İs team variable
@@ -596,4 +596,3 @@ ui.removeTextArea(81,name)
 ui.removeTextArea(82,name)
 end
 end
-
