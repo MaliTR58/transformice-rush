@@ -57,7 +57,7 @@ end
 
 function eventNewPlayer(name)
 egilmeresmi[name] = tfm.exec.addImage(resim1, ":1", 739, 342, name)
-
+tfm.exec.setGameTime(600)
 
 if tfm.get.room.playerList[name].community=="tr" or tfm.get.room.playerList[name].community=="en" or tfm.get.room.playerList[name].community=="pl" or tfm.get.room.playerList[name].community=="es" or tfm.get.room.playerList[name].community=="br" or tfm.get.room.playerList[name].community=="fr" then
 if tfm.get.room.playerList[name].community=="tr" then
@@ -480,6 +480,7 @@ ui.removeTextArea(64,name)
 ui.removeTextArea(63,name)
 puans=0
 puank=0
+tfm.exec.setGameTime(10)
 tfm.exec.chatMessage("<n>Thanks to her. <rose>Red</rose> team is win.")
 end
 
@@ -519,6 +520,7 @@ ui.removeTextArea(64,name)
 ui.removeTextArea(63,name)
 puans=0
 puank=0
+tfm.exec.setGameTime(10)
 tfm.exec.chatMessage("<n>Thanks to her. <j>Yellow</j> team is win.")
 end
 end
