@@ -149,7 +149,7 @@ tfm.exec.movePlayer(name,1600,-50)
 tfm.exec.chatMessage("<n>Please type <j>!help</j> for help.</n>",name)
 
 ui.addTextArea(81, "<p align='center'><a href='event:close'>CLOSE", name, 373.5, 337, 50, 20,0x000000,0x000001,500,true)
-ui.addTextArea(82, "<p align='center'><a href='event:close'><br><b><font size='15' color='#FD0065'>"..lang[name].dlytnk.."</font></b><br><br><b><font size='15' color='#0076FF'>Q</font></b> "..lang[name].dlq.."</b><br><br><b><font size='15' color='#0076FF'>E</font>:</b> "..lang[name].dle.."<br><br><b><font size='15' color='#0076FF'>F</font>:</b> "..lang[name].dlf..".<br><br><font size='15' color='#0076FF'>Down Key:</font>"..lang[name].dls.."<br><br>"..lang[name].dlbaslangic.."<br><br>Coder: Muco#2311 <br>Host: Bodykudo#0000", name, 200, 76, 400, 250,0x000000,0x000001,500,true)
+ui.addTextArea(82, "<p align='center'><a href='event:close'><br><b><font size='15' color='#FD0065'>"..lang[name].dlytnk.."</font></b><br><br><b><font size='15' color='#0076FF'>Q</font></b> "..lang[name].dlq.."</b><br><br><b><font size='15' color='#0076FF'>E</font>:</b> "..lang[name].dle.."<br><br><b><font size='15' color='#0076FF'>F</font>:</b> "..lang[name].dlf..".<br><br><font size='15' color='#0076FF'>Down Key:</font>"..lang[name].dls.."<br><br>"..lang[name].dlbaslangic.."<br><br>Coder: Muco#2311 <br>Host: -", name, 200, 76, 400, 250,0x000000,0x000001,500,true)
 
 zipla[name]={ziplaa=0,ziplamaa=0} --Jump times variable
 takim[name]={takima=0} --İs team variable
